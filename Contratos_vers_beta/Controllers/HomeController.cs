@@ -216,45 +216,40 @@ namespace Contratos_vers_beta.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                db.Contratos.AddRange(model);
+                await db.SaveChangesAsync();
+
+                await Task.Run(() =>
                 {
-                    db.Contratos.AddRange(model);
-                    await db.SaveChangesAsync();
-
-                    await Task.Run(() =>
+                    using (AppDbContext app = new AppDbContext())
                     {
-                        using (AppDbContext app = new AppDbContext())
+                        List<ModifiedContratos> modifieds = new List<ModifiedContratos>();
+                        foreach (var item in model)
                         {
-                            List<ModifiedContratos> modifieds = new List<ModifiedContratos>();
-                            foreach (var item in model)
+                            var RegisterContratos = new ModifiedContratos
                             {
-                                var RegisterContratos = new ModifiedContratos
-                                {
-                                    ExecutedAction = "Create",
-                                    ActionHour = DateTime.Now,
-                                    EmailUser = User.Identity.GetUserName(),
-                                    IdUser = User.Identity.GetUserId(),
-                                    IdContrato = item.Id,
-                                    IdPDFContrato = null,
-                                };
-                                modifieds.Add(RegisterContratos);
-                            }
-
-                            app.ModifiedContratos.AddRange(modifieds);
-                            app.SaveChanges();
+                                ExecutedAction = "Create",
+                                ActionHour = DateTime.Now,
+                                EmailUser = User.Identity.GetUserName(),
+                                IdUser = User.Identity.GetUserId(),
+                                IdContrato = item.Id,
+                                IdPDFContrato = null,
+                            };
+                            modifieds.Add(RegisterContratos);
                         }
-                    });
-                }
 
-                ViewBag.Success = "Se guardarón todas las filas correctamente.";
-
-                return View("ViewContratos");
+                        app.ModifiedContratos.AddRange(modifieds);
+                        app.SaveChanges();
+                    }
+                });
+                ViewBag.Success = "Se guardaron todas las filas correctamente.";
+                return RedirectToAction("ViewContratos");
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
 
-                return View("ImportExcelContratos");
+                return View("ViewContratos");
             }
         }
 
