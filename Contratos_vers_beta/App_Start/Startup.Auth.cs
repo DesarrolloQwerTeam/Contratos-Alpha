@@ -39,11 +39,11 @@ namespace Contratos_vers_beta
 
                     OnResponseSignIn = signInContext =>
                     {
-                        if (signInContext.Properties.Dictionary["organization"] == "org-1")
-                            TimeSpan = TimeSpan.FromMinutes(5);
-                        else
-                            TimeSpan = TimeSpan.FromMinutes(30);
-
+                        //if (signInContext.Properties.Dictionary["organization"] == "org-1")
+                        //    TimeSpan = TimeSpan.FromMinutes(5);
+                        //else
+                        //    TimeSpan = TimeSpan.FromMinutes(30);
+                        TimeSpan = TimeSpan.FromMinutes(30);
                         signInContext.Properties.ExpiresUtc = DateTime.UtcNow.Add(TimeSpan);
                     }
                 },
