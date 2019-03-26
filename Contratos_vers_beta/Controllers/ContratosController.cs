@@ -54,7 +54,7 @@ namespace Contratos_vers_beta.Controllers
             {
                 db.Contratos.Add(contratos);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ViewContratos", "Home");
             }
 
             return View(contratos);
@@ -86,7 +86,7 @@ namespace Contratos_vers_beta.Controllers
             {
                 db.Entry(contratos).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ViewContratos", "Home");
             }
             return View(contratos);
         }
@@ -114,7 +114,7 @@ namespace Contratos_vers_beta.Controllers
             Contratos contratos = db.Contratos.Find(id);
             db.Contratos.Remove(contratos);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewContratos", "Home");
         }
 
         protected override void Dispose(bool disposing)
