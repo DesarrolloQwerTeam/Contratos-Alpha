@@ -1,0 +1,100 @@
+﻿@using Contratos_vers_beta.Models;
+@model IEnumerable<Contratos_vers_beta.Models.Contratos>
+@{
+    ViewBag.Title = "ViewContratos";
+}
+
+<div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
+    <h1 class="display-5 text-align">¡Lista de Contratos!</h1>
+    <p class="lead text-align">Contratos ordenados de forma descendente.</p>
+</div>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> @Html.Raw(ViewData["Error"])
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewData["Success"] != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Éxito!</strong> @Html.Raw(ViewData["Success"])
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+  
+        <div class="row">
+            <div class="col-xl-2">
+                @Html.ActionLink("Agregar contrato", "Create", "Contratos", routeValues: null, htmlAttributes: new { @class = "btn color-azul boton-menu" })
+            </div>
+            <div class="col-xl-2">
+                @Html.ActionLink("Importar Excel", "ImportExcelContratos", "Home", routeValues: null, htmlAttributes: new { @class = "btn color-verde boton-menu" })
+            </div>
+        </div>
+    
+     
+      
+
+
+        @using (Html.BeginForm("ViewContratos", "Home", FormMethod.Post))
+        {
+
+            @(Html.Kendo().Grid<Contratos_vers_beta.Models.Contratos>()
+                                .Name("grid")
+                                .HtmlAttributes(new { style = "height:600px;" })
+                                .Columns(columns =>
+                                {
+                                    columns.Bound(c => c.CLAVE_DEL_CONTRATO).Width(270);
+                                    columns.Bound(c => c.FECHA).Width(270);
+                                    columns.Bound(c => c.EMPRESA).Width(270);
+                                    columns.Bound(c => c.APODERADO).Width(270);
+                                    columns.Bound(c => c.FIRMADO).Width(200);
+                                    columns.Bound(c => c.EMPRESA_1).Width(270);
+                                    columns.Bound(c => c.APODERADO_1).Width(270);
+                                    columns.Bound(c => c.FIRMADO_1).Width(200);
+                                    columns.Bound(c => c.EMPRESA_2).Width(270);
+                                    columns.Bound(c => c.APODERADO_2).Width(270);
+                                    columns.Bound(c => c.FIRMADO_2).Width(200);
+                                    columns.Bound(c => c.CONTRAPRESTACION_IVA_INCLUIDO).Width(270);
+                                    columns.Bound(c => c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO).Width(270);
+                                    columns.Bound(c => c.ORIGINAL_O_COPIA).Width(200);
+                                    columns.Bound(c => c.ANIO_DE_FIRMA).Width(270);
+                                    columns.Bound(c => c.OBSERVACIONES).Width(270);
+                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-sm" }).ToHtmlString()).Title("").Width(180);
+                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-sm" }).ToHtmlString()).Title("").Width(190);
+                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-sm" }).ToHtmlString()).Title("").Width(210);
+                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-sm", target = "_blank" }).ToHtmlString()).Title("").Width(190);
+                                })
+                                .Scrollable().Filterable(filterable => filterable.Messages(m => m.IsFalse("No"))
+                                .Messages(m => m.IsTrue("Sí")))
+                                .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+                                .Groupable()
+                                .Sortable()
+                                .Pageable(pageable => pageable
+                                    .Refresh(true)
+                                    .PageSizes(true)
+                                    .ButtonCount(5))
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Sort(x => x.Add("Id").Descending())
+                                    .ServerOperation(true)
+                                    .Read(read => read.Action("Contratos_Read", "Home"))
+                                    .PageSize(20)
+                                )
+            )
+        }
+
