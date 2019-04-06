@@ -380,12 +380,12 @@
     <Content Include="Views\ManageAccounts\Details.cshtml" />
     <Content Include="Views\ManageAccounts\Edit.cshtml" />
     <Content Include="Views\ManageAccounts\Index.cshtml" />
+    <Content Include="Views\Serial\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="excelfolder\" />
     <Folder Include="Views\Bufete\" />
-    <Folder Include="Views\Serial\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
