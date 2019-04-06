@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
@@ -36,6 +37,7 @@ namespace Contratos_vers_beta.Models
         [DataType(DataType.Password)]
         [Display(Name = "Confirme la contraseña nueva")]
         [Compare("NewPassword", ErrorMessage = "La contraseña nueva y la contraseña de confirmación no coinciden.")]
+        [NotMapped]
         public string ConfirmPassword { get; set; }
     }
 

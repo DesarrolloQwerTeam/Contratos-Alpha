@@ -12,7 +12,7 @@ namespace Contratos_vers_beta.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int? Id { get; set; }
-
+        
         [StringLength(128)]
         public string IdUser { get; set; }
 

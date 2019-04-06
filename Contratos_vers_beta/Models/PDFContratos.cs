@@ -12,7 +12,7 @@ namespace Contratos_vers_beta.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int? Id { get; set; }
-
+        
         [StringLength(250)]
         [Display(Name = "Nombre del archivo")]
         public string NameFile { get; set; }

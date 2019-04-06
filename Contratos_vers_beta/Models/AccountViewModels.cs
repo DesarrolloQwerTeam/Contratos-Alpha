@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Contratos_vers_beta.Models
 {
@@ -78,6 +79,7 @@ namespace Contratos_vers_beta.Models
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar contraseña")]
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        [NotMapped]
         public string ConfirmPassword { get; set; }
     }
 

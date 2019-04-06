@@ -17,6 +17,7 @@ namespace Contratos_vers_beta.Models
         public DbSet<PDFContratos> PDFContratos { get; set; }
         public DbSet<ManageAccount> ManageAccounts { get; set; }
         public DbSet<ModifiedContratos> ModifiedContratos { get; set; }
+        public DbSet<Bufete> Bufetes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
