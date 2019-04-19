@@ -2,8 +2,13 @@
   font-family: fjalla;
   src: url(/Content/css/SourceSansPro-Regular.ttf);
 }
-.text-align{
-    text-align:center !important;
+/*INCIO CAMBIIOS YISUS*/
+.btn-text-white{
+    color:white !important;
+}
+/*FIN CAMBIIOS YISUS*/
+.text-align {
+    text-align: center !important;
 }
 .fondocontrato {
     background-color: whitesmoke !important;
