@@ -29,7 +29,7 @@ namespace Contratos_vers_beta.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contratos contratos = db.Contratos.Find(id);
+            Contrato contratos = db.Contratos.Find(id);
             if (contratos == null)
             {
                 return HttpNotFound();
@@ -48,7 +48,7 @@ namespace Contratos_vers_beta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES")] Contratos contratos)
+        public ActionResult Create([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES")] Contrato contratos)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace Contratos_vers_beta.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contratos contratos = db.Contratos.Find(id);
+            Contrato contratos = db.Contratos.Find(id);
             if (contratos == null)
             {
                 return HttpNotFound();
@@ -80,7 +80,7 @@ namespace Contratos_vers_beta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES")] Contratos contratos)
+        public ActionResult Edit([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES")] Contrato contratos)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace Contratos_vers_beta.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contratos contratos = db.Contratos.Find(id);
+            Contrato contratos = db.Contratos.Find(id);
             if (contratos == null)
             {
                 return HttpNotFound();
@@ -111,7 +111,7 @@ namespace Contratos_vers_beta.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Contratos contratos = db.Contratos.Find(id);
+            Contrato contratos = db.Contratos.Find(id);
             db.Contratos.Remove(contratos);
             db.SaveChanges();
             return RedirectToAction("ViewContratos", "Home");

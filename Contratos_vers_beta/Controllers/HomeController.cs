@@ -88,7 +88,7 @@ namespace Contratos_vers_beta.Controllers
         {
             return await Task.Run(() =>
                 {
-                    IQueryable<Contratos> contratos = db.Contratos;
+                    IQueryable<Contrato> contratos = db.Contratos;
 
                     DataSourceResult result = contratos.ToDataSourceResult(request, customer => new
                     {
@@ -157,7 +157,7 @@ namespace Contratos_vers_beta.Controllers
             }
         }
 
-        private async Task<IEnumerable<Contratos>> ExcelAsync(HttpPostedFileBase excelfile)
+        private async Task<IEnumerable<Contrato>> ExcelAsync(HttpPostedFileBase excelfile)
         {
             return await Task.Run(() =>
             {
@@ -171,12 +171,12 @@ namespace Contratos_vers_beta.Controllers
 
                 ExcelWorksheet workSheet = package.Workbook.Worksheets["BD Con"];
 
-                IEnumerable<Contratos> model;
-                List<Contratos> ListConvenio = new List<Contratos>();
+                IEnumerable<Contrato> model;
+                List<Contrato> ListConvenio = new List<Contrato>();
 
                 for (int i = workSheet.Dimension.Start.Row + 1; i <= workSheet.Dimension.End.Row; i++)
                 {
-                    Contratos c = new Contratos
+                    Contrato c = new Contrato
                     {
                         CLAVE_DEL_CONTRATO = workSheet.Cells[i, 4].Text,
                         FECHA = DBNull.Value.Equals(workSheet.Cells[i, 5].Value.ToString()) == true ? (DateTime?)null : DateTime.Parse(workSheet.Cells[i, 5].Value.ToString()),
@@ -212,7 +212,7 @@ namespace Contratos_vers_beta.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddContratos(IEnumerable<Contratos> model)
+        public async Task<ActionResult> AddContratos(IEnumerable<Contrato> model)
         {
             try
             {
@@ -259,7 +259,7 @@ namespace Contratos_vers_beta.Controllers
             if (Id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            Contratos Contratos = db.Contratos.Find(Id);
+            Contrato Contratos = db.Contratos.Find(Id);
 
             if (Contratos == null)
                 return HttpNotFound();
@@ -305,7 +305,7 @@ namespace Contratos_vers_beta.Controllers
                     BinaryReader binaryReader = new BinaryReader(_Stream);
                     byte[] File = binaryReader.ReadBytes((int)_Stream.Length);
 
-                    var contratos = new Contratos() { Id = model.Contratos.Id };
+                    var contratos = new Contrato() { Id = model.Contratos.Id };
                     db.Contratos.Attach(contratos);
 
                     model.File = File;

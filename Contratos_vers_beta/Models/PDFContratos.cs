@@ -13,6 +13,8 @@ namespace Contratos_vers_beta.Models
         [Key]
         public int? Id { get; set; }
 
+        public Contrato Contrato { get; set; }
+
         [StringLength(250)]
         [Display(Name = "Nombre del archivo")]
         public string NameFile { get; set; }
@@ -25,6 +27,5 @@ namespace Contratos_vers_beta.Models
         [Display(Name = "Seleccionar archivo PDF")]
         public HttpPostedFileBase FileView { get; set; }
 
-        public virtual Contratos Contratos { get; set; }
     }
 }

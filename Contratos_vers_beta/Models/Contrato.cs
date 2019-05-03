@@ -7,11 +7,13 @@ using System.Web;
 
 namespace Contratos_vers_beta.Models
 {
-    public class Contratos
+    public class Contrato
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int? Id { get; set; }
+
+        public Organizacion Organizacion { get; set; }
 
         [Display(Name = "Clave del Contrato")]
         [StringLength(250)]
@@ -72,6 +74,7 @@ namespace Contratos_vers_beta.Models
         [StringLength(250)]
         public string OBSERVACIONES { get; set; }
 
-        public virtual ICollection<PDFContratos> PDFContratos { get; set; }
+        public PDFContratos PDFContrato { get; set; }
+        public List<ModifiedContratos> ModificacionContrato { get; set; }
     }
 }

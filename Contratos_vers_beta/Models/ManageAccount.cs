@@ -16,12 +16,6 @@ namespace Contratos_vers_beta.Models
         public DateTime? LogoutHour { get; set; }
 
         public bool? LogoutByInactivity { get; set; }
-
-        [Display(Name = "Email registrado")]
-        [StringLength(256)]
-        public string EmailUser { get; set; }
-
-        [StringLength(128)]
-        public string IdUser { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

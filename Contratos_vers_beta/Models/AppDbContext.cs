@@ -13,7 +13,7 @@ namespace Contratos_vers_beta.Models
         {
         }
 
-        public DbSet<Contratos> Contratos { get; set; }
+        public DbSet<Contrato> Contratos { get; set; }
         public DbSet<PDFContratos> PDFContratos { get; set; }
         public DbSet<ManageAccount> ManageAccounts { get; set; }
         public DbSet<ModifiedContratos> ModifiedContratos { get; set; }

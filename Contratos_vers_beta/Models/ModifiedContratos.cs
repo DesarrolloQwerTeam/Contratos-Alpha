@@ -13,8 +13,9 @@ namespace Contratos_vers_beta.Models
         [Key]
         public int? Id { get; set; }
 
-        [StringLength(128)]
-        public string IdUser { get; set; }
+        public Usuario Usuario { get; set; }
+
+        public Contrato Contrato { get; set; }
 
         [StringLength(256)]
         public string EmailUser { get; set; }
@@ -26,8 +27,6 @@ namespace Contratos_vers_beta.Models
         [Display(Name = "Hora de ejecución")]
         public DateTime ActionHour { get; set; }
 
-        public int? IdContrato { get; set; }
 
-        public int? IdPDFContrato { get; set; }
     }
 }
