@@ -379,28 +379,18 @@ namespace Contratos_vers_beta.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreaPDF()
+        public FileResult CreaPDF()
         {
-            ExportPDF pdf = new ExportPDF();
-            pdf.CreatePdf("C:/Users/Rodrigo/Desktop/Contratos-Alpha/hola4" + DateTime.Now.Millisecond +".pdf", db.Contratos.ToList());
-            return View("ViewContratos");
+            MemoryStream ms = new MemoryStream();
+
+            byte[] byteStream = ExportPDF.CreatePdf(db.Contratos.ToList(), ms).ToArray();
+            ms = new MemoryStream();
+            ms.Write(byteStream, 0, byteStream.Length);
+            ms.Position = 0;
+            
+            return new FileStreamResult(ms, "application/pdf");
         }
 
-        [HttpPost]
-        public ActionResult Excel_Export_Save(string contentType, string base64, string fileName)
-        {
-            var fileContents = Convert.FromBase64String(base64);
-
-            return File(fileContents, contentType, fileName);
-        }
-
-        [HttpPost]
-        public ActionResult Pdf_Export_Save(string contentType, string base64, string fileName)
-        {
-            var fileContents = Convert.FromBase64String(base64);
-
-            return File(fileContents, contentType, fileName);
-        }
     }
 }
 
