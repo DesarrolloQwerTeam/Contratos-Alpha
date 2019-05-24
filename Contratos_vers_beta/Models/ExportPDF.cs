@@ -29,12 +29,12 @@ namespace Contratos_vers_beta.Models
             Cell datosEmpresa = new Cell();
             datosEmpresa.Add(new Paragraph("INGRESAR DATOS RELACIONADOS A LA EMPRESA.")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBorder(iText.Layout.Borders.Border.NO_BORDER);
 
-            Cell imagen = new Cell();
-            ImageData data = ImageDataFactory.Create("C:/Users/axelf/Desktop/Contratos-Alpha/Contratos_vers_beta/Content/img/logo.jpg");
-            Image img = new Image(data);
-            imagen.Add(img.SetAutoScale(true)).SetMaxHeight(250).SetMaxHeight(250).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT);
+            //Cell imagen = new Cell();
+            //ImageData data = ImageDataFactory.Create("C:/Users/axelf/Desktop/Contratos-Alpha/Contratos_vers_beta/Content/img/logo.jpg");
+            //Image img = new Image(data);
+            //imagen.Add(img.SetAutoScale(true)).SetMaxHeight(250).SetMaxHeight(250).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT);
 
-            info.AddCell(imagen);
+            //info.AddCell(imagen);
             info.AddCell(datosEmpresa);
             //tabla de contenido
             Table tabla = new Table(15);
@@ -56,6 +56,7 @@ namespace Contratos_vers_beta.Models
             tabla.AddHeaderCell(new Paragraph("VIGENCIA").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold());
             tabla.AddHeaderCell(new Paragraph("ORIGINAL O COPIA").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold());
             tabla.AddHeaderCell(new Paragraph("AÑO DE FIRMA").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold());
+            tabla.AddHeaderCell(new Paragraph("FINALIZADO").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold());
             foreach (var item in contratos)
             {
                 //ID
@@ -92,11 +93,11 @@ namespace Contratos_vers_beta.Models
                 tabla.AddCell(cellFIR2);
                 //Empresa 3
                 Cell cellEMP3 = new Cell();
-                cellEMP3.Add(new Paragraph(item.EMPRESA_2)).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(50);
+                cellEMP3.Add(new Paragraph((item.EMPRESA_2 == string.Empty) ? item.EMPRESA_2 : "")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(50);
                 tabla.AddCell(cellEMP3);
                 //Apoderado 3
                 Cell cellAPO3 = new Cell();
-                cellAPO3.Add(new Paragraph(item.APODERADO_2)).SetMaxWidth(60).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
+                cellAPO3.Add(new Paragraph((item.APODERADO_2 == string.Empty) ? item.APODERADO_2 : "")).SetMaxWidth(60).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
                 tabla.AddCell(cellAPO3);
                 //Firmado 3
                 Cell cellFIR3 = new Cell();
@@ -117,6 +118,10 @@ namespace Contratos_vers_beta.Models
                 //Año firma
                 Cell cellANIO = new Cell();
                 cellANIO.Add(new Paragraph(item.ANIO_DE_FIRMA)).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(20);
+                tabla.AddCell(cellANIO);
+                //Finalizado
+                Cell cellFinalizado = new Cell();
+                cellFinalizado.Add(new Paragraph(item.FINALIZADO ? "Finalizado": "Sin finalizar")).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(20);
                 tabla.AddCell(cellANIO);
                 //tabla.AddCell(new Paragraph(item.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO));
                 //tabla.AddCell(new Paragraph(item.ORIGINAL_O_COPIA.ToString()));

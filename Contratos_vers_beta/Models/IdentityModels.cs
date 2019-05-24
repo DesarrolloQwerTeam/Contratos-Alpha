@@ -29,5 +29,7 @@ namespace Contratos_vers_beta.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Contratos_vers_beta.Models.Contratos> Contratos { get; set; }
     }
 }

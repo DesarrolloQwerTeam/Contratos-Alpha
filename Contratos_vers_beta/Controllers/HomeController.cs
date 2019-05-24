@@ -109,6 +109,7 @@ namespace Contratos_vers_beta.Controllers
                         customer.ANIO_DE_FIRMA,
                         customer.OBSERVACIONES,
                         customer.Id,
+                        customer.FINALIZADO
                     });
 
                     return Json(result);
@@ -194,6 +195,7 @@ namespace Contratos_vers_beta.Controllers
                         ORIGINAL_O_COPIA = workSheet.Cells[i, 19].Text == "ORIGINAL" ? true : false,
                         ANIO_DE_FIRMA = workSheet.Cells[i, 22].Text,
                         OBSERVACIONES = workSheet.Cells[i, 21].Text,
+                        FINALIZADO = false,
                     };
                     ListConvenio.Add(c);
                 }

@@ -58,25 +58,6 @@
 
             @(Html.Kendo().Grid<Contratos_vers_beta.Models.Contratos>()
                                 .Name("grid")
-                                .ToolBar(tools => tools.Excel())
-                                .ToolBar(tools=> tools.Pdf())
-                                .Excel(excel => excel
-                                    .FileName("Kendo UI Grid Export.xlsx")
-                                    .Filterable(true)
-                                    .ProxyURL(Url.Action("Excel_Export_Save", "Home"))
-                                )
-                                .Pdf(pdf => pdf
-                                    .AllPages()
-                                    .AvoidLinks()
-                                    .PaperSize("A4")
-                                    .Scale(0.8)
-                                    .Margin("2cm", "1cm", "1cm", "1cm")
-                                    .Landscape()
-                                    .RepeatHeaders()
-                                    .TemplateId("page-template")
-                                    .FileName("Kendo UI Grid Export.pdf")
-                                    .ProxyURL(Url.Action("Pdf_Export_Save", "Home"))
-                                )
                                 .HtmlAttributes(new { style = "height:600px;" })
                                 .Columns(columns =>
                                 {
@@ -96,6 +77,7 @@
                                     columns.Bound(c => c.ORIGINAL_O_COPIA).Width(200);
                                     columns.Bound(c => c.ANIO_DE_FIRMA).Width(320);
                                     columns.Bound(c => c.OBSERVACIONES).Width(320);
+                                    columns.Bound(c => c.FINALIZADO).Width(200);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" }).ToHtmlString()).Title("").Width(100);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" }).ToHtmlString()).Title("").Width(110);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-success btn-text-white" }).ToHtmlString()).Title("").Width(130);

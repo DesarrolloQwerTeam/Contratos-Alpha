@@ -898,3 +898,5 @@ C:\Users\axelf\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_v
 C:\Users\axelf\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.dll
 C:\Users\axelf\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.pdb
 C:\Users\axelf\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.Migrations.Datofinalizado.resources
+C:\Users\Rodrigo\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.Migrations.Contratoscamporequerido.resources

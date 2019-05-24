@@ -265,6 +265,14 @@
     <Compile Include="Migrations\201810262330473_logoutbyinactivity.Designer.cs">
       <DependentUpon>201810262330473_logoutbyinactivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905241733340_Dato finalizado.cs" />
+    <Compile Include="Migrations\201905241733340_Dato finalizado.Designer.cs">
+      <DependentUpon>201905241733340_Dato finalizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905241810357_Contratos campo requerido.cs" />
+    <Compile Include="Migrations\201905241810357_Contratos campo requerido.Designer.cs">
+      <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -439,6 +447,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810262330473_logoutbyinactivity.resx">
       <DependentUpon>201810262330473_logoutbyinactivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905241733340_Dato finalizado.resx">
+      <DependentUpon>201905241733340_Dato finalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905241810357_Contratos campo requerido.resx">
+      <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
