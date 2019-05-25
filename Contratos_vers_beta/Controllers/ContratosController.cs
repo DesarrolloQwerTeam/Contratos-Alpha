@@ -80,7 +80,7 @@ namespace Contratos_vers_beta.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES")] Contratos contratos)
+        public ActionResult Edit([Bind(Include = "Id,CLAVE_DEL_CONTRATO,FECHA,EMPRESA,APODERADO,FIRMADO,EMPRESA_1,APODERADO_1,FIRMADO_1,EMPRESA_2,APODERADO_2,FIRMADO_2,CONTRAPRESTACION_IVA_INCLUIDO,VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO,ORIGINAL_O_COPIA,ANIO_DE_FIRMA,OBSERVACIONES, FINALIZADO")] Contratos contratos)
         {
             if (ModelState.IsValid)
             {

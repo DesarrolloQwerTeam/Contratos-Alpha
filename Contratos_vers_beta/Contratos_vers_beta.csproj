@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201905241810357_Contratos campo requerido.Designer.cs">
       <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905242044377_Cambios.cs" />
+    <Compile Include="Migrations\201905242044377_Cambios.Designer.cs">
+      <DependentUpon>201905242044377_Cambios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -303,6 +307,7 @@
     <Content Include="Content\css\fondologin.jpg" />
     <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\querteamwhite.png" />
+    <Content Include="Content\img\QWERTEAMLOGO.png" />
     <Content Include="Content\img\qwerteamtransparente.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -453,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905241810357_Contratos campo requerido.resx">
       <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905242044377_Cambios.resx">
+      <DependentUpon>201905242044377_Cambios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

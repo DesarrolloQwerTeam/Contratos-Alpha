@@ -8,7 +8,8 @@ using iText.Kernel.Pdf;
 using System.IO;
 using System.ComponentModel.DataAnnotations.Schema;
 using iText.Kernel.Geom;
-using iText.IO.Image;
+using iText.Layout.Borders;
+using iText.Kernel.Colors;
 
 namespace Contratos_vers_beta.Models
 {
@@ -25,20 +26,24 @@ namespace Contratos_vers_beta.Models
             Document document = new Document(pdf, PageSize.A4.Rotate());
 
             //Tabla de información
-            Table info = new Table(2);
-            Cell datosEmpresa = new Cell();
-            datosEmpresa.Add(new Paragraph("INGRESAR DATOS RELACIONADOS A LA EMPRESA.")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBorder(iText.Layout.Borders.Border.NO_BORDER);
 
-            //Cell imagen = new Cell();
-            //ImageData data = ImageDataFactory.Create("C:/Users/axelf/Desktop/Contratos-Alpha/Contratos_vers_beta/Content/img/logo.jpg");
-            //Image img = new Image(data);
-            //imagen.Add(img.SetAutoScale(true)).SetMaxHeight(250).SetMaxHeight(250).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT);
+            Table info = new Table(4);
+            Cell cell;
+            cell = new Cell(1, 2).Add(new Paragraph("Fecha:")).SetBorder(Border.NO_BORDER);
+            info.AddCell(cell);
+            cell = new Cell(1, 2).Add(new Paragraph(DateTime.Today.ToLongDateString())).SetBorder(Border.NO_BORDER).SetBorderBottom(new SolidBorder(1f));
+            info.AddCell(cell);
+            cell = new Cell(1, 2).Add(new Paragraph("Número de contratos:")).SetBorder(Border.NO_BORDER);
+            info.AddCell(cell);
+            cell = new Cell(1, 2).Add(new Paragraph(contratos.Count.ToString())).SetBorder(Border.NO_BORDER).SetBorderBottom(new SolidBorder(1f));
+            info.AddCell(cell);
+            info.SetFontSize(5);
 
-            //info.AddCell(imagen);
-            info.AddCell(datosEmpresa);
+
+
             //tabla de contenido
-            Table tabla = new Table(15);
-            tabla.SetFontSize(6);
+            Table tabla = new Table(16);
+            tabla.SetFontSize(5);
 
             tabla.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
             tabla.AddHeaderCell(new Paragraph("ID").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold());
@@ -117,12 +122,12 @@ namespace Contratos_vers_beta.Models
                 tabla.AddCell(cellOR);
                 //Año firma
                 Cell cellANIO = new Cell();
-                cellANIO.Add(new Paragraph(item.ANIO_DE_FIRMA)).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(20);
+                cellANIO.Add(new Paragraph(item.ANIO_DE_FIRMA)).SetMaxWidth(60).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
                 tabla.AddCell(cellANIO);
                 //Finalizado
                 Cell cellFinalizado = new Cell();
                 cellFinalizado.Add(new Paragraph(item.FINALIZADO ? "Finalizado": "Sin finalizar")).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(20);
-                tabla.AddCell(cellANIO);
+                tabla.AddCell(cellFinalizado);
                 //tabla.AddCell(new Paragraph(item.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO));
                 //tabla.AddCell(new Paragraph(item.ORIGINAL_O_COPIA.ToString()));
                 //tabla.AddCell(new Paragraph(item.ANIO_DE_FIRMA));
