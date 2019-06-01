@@ -16,8 +16,7 @@ namespace Contratos_vers_beta.Models
         [Display(Name = "Clave del Contrato")]
         [StringLength(250)]
         public string CLAVE_DEL_CONTRATO { get; set; }
-
-        [Required]
+        
         [Display(Name = "Fecha")]
         public DateTime? FECHA { get; set; }
 

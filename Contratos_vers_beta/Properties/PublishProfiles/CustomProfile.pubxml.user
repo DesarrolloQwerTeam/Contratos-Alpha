@@ -6,7 +6,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdqKROmGTAUG5NP/ugN4C6QAAAAACAAAAAAAQZgAAAAEAACAAAAALwO0HLzziqz/FoWlBGk3jsLgz8mJp/BE4CsuNtWZQfgAAAAAOgAAAAAIAACAAAAB2PDDVXogdkksu29u+RdHxtcJVadY3/8I4H/qG6LKTNSAAAAAnl4DuQ8jYfm4dSORwVQzTv6YhCdCCb7HswzttpdiuvUAAAAB19VqSiGRM7JgUL90JyNdy0++mWrOn9Qdz6T3FzWeirJ2CWIPN2rG8ue6x+1BjvPQPLS7pTft2u8Ci/iZmhY+Y</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4xbXXMS/3kKTDAMuoDtEzQAAAAACAAAAAAAQZgAAAAEAACAAAACGGyrR/r7nLdqN7L1GXMP4KuNVNaxT00xKb0+fAwJvZAAAAAAOgAAAAAIAACAAAAByXtX52ojZBcNt7em7t+rZs4Xq3YWN0ghCYEhPlVH3CCAAAABSbbucN6B7eFGHogzR5V/fvNAS4NG9dYLa7rnegoxpC0AAAABEwEOP1QQ51J/4eTP57c8uaymVHspCm+WtyNSnZhXFayrRKiweWAtWN0v3LY0vqgI5216l/ORiswCDWhY/Ii0Y</EncryptedPassword>
     <_PublishTargetUrl>ftp://contratos.company</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>

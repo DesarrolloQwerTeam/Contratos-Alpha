@@ -1,0 +1,50 @@
+﻿@model Contratos_vers_beta.Models.ManageAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ManageAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoutHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoutHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

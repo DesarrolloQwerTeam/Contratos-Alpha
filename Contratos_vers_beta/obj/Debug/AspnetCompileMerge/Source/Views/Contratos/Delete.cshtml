@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Delete";
 }
+<<<<<<< HEAD
 
 <h2>Delete</h2>
 <br />
@@ -150,3 +151,159 @@
     </div>
     }
 </div>
+=======
+<section class="fondocontrato">
+    <div class="container containercard">
+        <div class="card">
+            <div class="card-body shadow-lg">
+                <h2>Delete</h2>
+
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>Contratos</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CLAVE_DEL_CONTRATO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CLAVE_DEL_CONTRATO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FECHA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FECHA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EMPRESA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EMPRESA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.APODERADO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.APODERADO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FIRMADO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FIRMADO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EMPRESA_1)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EMPRESA_1)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.APODERADO_1)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.APODERADO_1)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FIRMADO_1)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FIRMADO_1)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.EMPRESA_2)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.EMPRESA_2)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.APODERADO_2)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.APODERADO_2)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.FIRMADO_2)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.FIRMADO_2)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CONTRAPRESTACION_IVA_INCLUIDO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CONTRAPRESTACION_IVA_INCLUIDO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ORIGINAL_O_COPIA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ORIGINAL_O_COPIA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ANIO_DE_FIRMA)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ANIO_DE_FIRMA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.OBSERVACIONES)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" /> |
+                            @Html.ActionLink("Regresar a lista de contratos", "ViewContratos", "Home")
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>

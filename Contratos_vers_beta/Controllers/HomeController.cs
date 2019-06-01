@@ -195,7 +195,7 @@ namespace Contratos_vers_beta.Controllers
                         ORIGINAL_O_COPIA = workSheet.Cells[i, 19].Text == "ORIGINAL" ? true : false,
                         ANIO_DE_FIRMA = workSheet.Cells[i, 22].Text,
                         OBSERVACIONES = workSheet.Cells[i, 21].Text,
-                        FINALIZADO = false,
+                        //FINALIZADO = false,
                     };
                     ListConvenio.Add(c);
                 }
