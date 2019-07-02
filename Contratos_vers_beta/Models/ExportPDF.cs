@@ -29,7 +29,9 @@ namespace Contratos_vers_beta.Models
             //Tabla de información
             Table header = new Table(5);
             Cell imagen = new Cell();
-            ImageData data = ImageDataFactory.Create("C:/Users/Rodrigo/Desktop/Axel/31 de mayo/Contratos-Alpha/Contratos_vers_beta/Content/img/logo.jpg");
+            string dirLogo = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+            string nombreArchivo = System.IO.Path.Combine(dirLogo, @"Content\img\logo.jpg");
+            ImageData data = ImageDataFactory.Create(nombreArchivo);
             Image img = new Image(data);
             imagen.Add(img.SetAutoScale(true)).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT);
             imagen.SetHeight(45).SetWidth(50);
@@ -43,7 +45,9 @@ namespace Contratos_vers_beta.Models
             vacio2.Add(new Paragraph("")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetWidth(150).SetHeight(45);
 
             Cell imagenQT = new Cell();
-            ImageData dataQT = ImageDataFactory.Create("C:/Users/Rodrigo/Desktop/Axel/31 de mayo/Contratos-Alpha/Contratos_vers_beta/Content/img/QWERTEAMLOGO.png");
+            string dirQT = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+            string nombreQT = System.IO.Path.Combine(dirQT, @"Content\img\QWERTEAMLOGO.png");
+            ImageData dataQT = ImageDataFactory.Create(nombreQT);
             Image imgQT = new Image(dataQT);
             imagenQT.Add(imgQT.SetAutoScale(true)).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetBorder(iText.Layout.Borders.Border.NO_BORDER).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT);
             imagenQT.SetHeight(45).SetWidth(110);

@@ -1,0 +1,82 @@
+﻿@model Contratos_vers_beta.Models.DatosFiltrados
+    
+    ViewBag.Title = "AdminMovimientos";
+}
+
+<div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
+    <h1 class="display-5 text-align">¡Lista de Movimientos!</h1>
+    <p class="lead text-align">Seleccione el usuario y consulte los movimientos.</p>
+</div>
+<label class="select-user" for="dato">SELECCIONAR USUARIO:</label>
+<form method="GET">
+    <select class="input-design" name="dato">
+        <option>Seleccionar...</option>
+        @foreach (var cuenta in Model.usuarios)
+        {
+
+            <option value=@cuenta>@cuenta</option>
+        }
+
+    </select>
+
+    <input class="input-design-button" type="submit" value="Aceptar" />
+</form>
+<div class="table-responsive-lg espacio">
+    <table class="table table-bordered tabla-text-centrado table-striped" id="tablamovs">
+        <thead class="thead-dark">
+            <tr>
+                <th class="header-table" scope="col">Correo</th>
+                <th class="header-table" scope="col">Movimiento</th>
+                <th class="header-table" scope="col">Hora de Movimiento</th>
+                <th class="header-table" scope="col">ID Contrato</th>
+                <th class="header-table" scope="col">ID PDF Contrato</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model.ModifiedContratos)
+            {
+                <tr class="hover-table">
+
+                    <td>@data.EmailUser</td>
+                    <td>@data.ExecutedAction</td>
+                    <td>@data.ActionHour</td>
+                    <td>@data.IdContrato</td>
+                    <td>@data.IdPDFContrato</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('#tablamovs').dataTable({
+            language: {
+                "search": "Buscar:",
+                "emptyTable": "Sin información, seleccione un usuario.",
+                "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                "infoEmpty": "No hay registros",
+                "lengthMenu": "Mostrar _MENU_ movimientos",
+                paginate: {
+                    first: '«',
+                    previous: '<',
+                    next: '>',
+                    last: '»'
+                },
+                aria: {
+                    paginate: {
+                        first: 'Primero',
+                        previous: 'Último',
+                        next: 'Siguiente',
+                        last: 'Última'
+                    }
+                }
+            }
+
+        });
+    });
+</script>
+
+

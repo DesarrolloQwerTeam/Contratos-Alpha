@@ -1,0 +1,72 @@
+﻿@model List<Contratos_vers_beta.Models.ManageAccount>
+
+@{
+    ViewBag.Title = "AdminCuentas";
+}
+
+
+<div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
+    <h1 class="display-5 text-align">¡Administrador de Cuentas!</h1>
+    <p class="lead text-align">Administras las cuentas registradas</p>
+</div>
+
+<div class="table-responsive-lg espacio">
+    <table class="table table-bordered tabla-text-centrado table-striped" id="tablacuenta">
+        <thead class="thead-dark">
+            <tr>
+                <th class="header-table" scope="col">Inicio de Sesión</th>
+                <th class="header-table" scope="col">Fin de Sesión</th>
+                <th class="header-table" scope="col">Correo</th>
+                @*<th class="header-table" scope="col">Inactividad</th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dato in Model)
+            {
+                <tr class="hover-table">
+                    <td>@dato.LoginHour</td>
+                    <td>@dato.LogoutHour</td>
+                    <td>@dato.EmailUser</td>
+                    @*<td>@dato.LogoutByInactivity</td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('#tablacuenta').dataTable({
+            language: {
+                "search": "Buscar:",
+                "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                "infoEmpty": "No hay registros",
+                "lengthMenu": "Mostrar _MENU_ registros",
+                paginate: {
+                    first: '«',
+                    previous: '<',
+                    next: '>',
+                    last: '»'
+                },
+                aria: {
+                    paginate: {
+                        first: 'Primero',
+                        previous: 'Último',
+                        next: 'Siguiente',
+                        last: 'Última'
+                    }
+                }
+            }
+           
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+

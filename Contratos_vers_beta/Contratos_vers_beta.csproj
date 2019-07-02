@@ -310,7 +310,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\estilos.css" />
     <Content Include="Content\css\fondologin.jpg" />
-    <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\img\querteamwhite.png" />
     <Content Include="Content\img\QWERTEAMLOGO.png" />
     <Content Include="Content\img\qwerteamtransparente.png" />
@@ -320,6 +322,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile5.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile6.pubxml" />
+    <None Include="Resources\logo.bmp" />
+    <None Include="Resources\logo.jpg.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -345,6 +351,10 @@
     <Content Include="Content\css\SourceSansPro-Regular.ttf" />
     <None Include="Properties\PublishProfiles\contratos - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile4.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -1691,3 +1691,4 @@ C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contr
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.csproj.CopyComplete
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.dll
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.pdb
+C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos-Alpha\Contratos_vers_beta\bin\Content\img\logo.jpg
