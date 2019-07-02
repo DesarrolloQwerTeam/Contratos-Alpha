@@ -285,6 +285,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Contratos.cs" />
+    <Compile Include="Models\DatosFiltrados.cs" />
     <Compile Include="Models\ExportPDF.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageAccount.cs" />
@@ -433,10 +434,13 @@
     <Content Include="Views\ManageAccounts\Edit.cshtml" />
     <Content Include="Views\ManageAccounts\Index.cshtml" />
     <Content Include="Scripts\kendo.all.min.js" />
+    <Content Include="Views\Home\AdminCuentas.cshtml" />
+    <Content Include="Views\Home\AdminMovimientos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="excelfolder\" />
+    <Folder Include="Views\AspNetUsers\" />
     <Folder Include="Views\Home\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>

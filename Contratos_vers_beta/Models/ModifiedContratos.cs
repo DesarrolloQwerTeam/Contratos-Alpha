@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Contratos_vers_beta.Models
 {
+
+
     public class ModifiedContratos
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -30,4 +30,5 @@ namespace Contratos_vers_beta.Models
 
         public int? IdPDFContrato { get; set; }
     }
+
 }

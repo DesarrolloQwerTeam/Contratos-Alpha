@@ -77,7 +77,7 @@
                                     columns.Bound(c => c.ORIGINAL_O_COPIA).Width(200);
                                     columns.Bound(c => c.ANIO_DE_FIRMA).Width(320);
                                     columns.Bound(c => c.OBSERVACIONES).Width(320);
-                                    columns.Bound(c => ).Width(200);
+                                    columns.Bound(c => c.FINALIZADO).Width(200);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" }).ToHtmlString()).Title("").Width(100);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" }).ToHtmlString()).Title("").Width(110);
                                     columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-success btn-text-white" }).ToHtmlString()).Title("").Width(130);

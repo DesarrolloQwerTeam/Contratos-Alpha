@@ -14,13 +14,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
+
 namespace Contratos_vers_beta.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
         private AppDbContext db = new AppDbContext();
-
+        private ApplicationDbContext context = new ApplicationDbContext();
         public ActionResult Index()
         {
             //if (User.Identity.IsAuthenticated)
@@ -391,6 +392,29 @@ namespace Contratos_vers_beta.Controllers
             ms.Position = 0;
             
             return new FileStreamResult(ms, "application/pdf");
+        }
+        [HttpGet]
+        public ActionResult AdminCuentas()
+        {
+
+            return View(db.ManageAccounts.ToList());
+        }
+
+        [HttpGet]
+        public ActionResult AdminMovimientos(string dato)
+        {
+            var lista = db.ModifiedContratos.Where(x => x.EmailUser == dato).ToList();
+            var correos = context.Users.Select(x => x.Email).ToList();
+            var cuentas = db.ManageAccounts.Select(x => x.EmailUser).ToList();
+
+            DatosFiltrados model = new DatosFiltrados
+            {
+                ModifiedContratos = lista,
+                usuarios = correos,
+            };
+
+           
+            return View(model);
         }
 
     }

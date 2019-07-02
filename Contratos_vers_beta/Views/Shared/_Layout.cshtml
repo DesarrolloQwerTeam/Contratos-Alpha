@@ -19,6 +19,9 @@
     <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
     <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.timezones.min.js"></script>
     <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.aspnetmvc.min.js"></script>
+
+     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <link href="~/Content/css/estilos.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/popper")
     @Scripts.Render("~/bundles/bootstrap")
@@ -45,6 +48,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         @Html.ActionLink("Ver Contratos", "ViewContratos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
                         @Html.ActionLink("Importar Excel", "ImportExcelContratos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        @Html.ActionLink("Admin Cuentas", "AdminCuentas", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        @Html.ActionLink("Admin Movimientos", "AdminMovimientos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        
                     </div>
                 </li>
             </ul>

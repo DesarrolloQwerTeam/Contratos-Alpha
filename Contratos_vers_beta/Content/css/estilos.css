@@ -2,6 +2,63 @@
   font-family: fjalla;
   src: url(/Content/css/SourceSansPro-Regular.ttf);
 }
+
+.input-design-button {
+    background-color: #1a5276 !important;
+    color: white !important;
+    border: 1.4px solid #1a5276;
+    padding-top: 4px;
+    border-radius: 3px;
+   
+}
+.input-design-button:hover {
+   opacity: .8;
+}
+
+.select-user{
+    font-size: 16px;
+    margin-bottom: 0px !important;
+}
+.input-design{
+    border: 1.4px solid #164563;
+    padding: 4px 2px 2px 4px !important;
+    border-radius: 3px;
+    margin-bottom: 30px !important;
+}
+/*VISTA ADMIN CUENTAS*/
+.tabla-text-centrado {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.hover-table:hover {
+    background-color: #D4E6F1 !important;
+}
+
+.header-table {
+    background-color: #1a5276 !important;
+    border-bottom: 10px solid #164563 !important;
+}
+
+.previous {
+    border: 1.5px solid #1a5276 !important;
+}
+
+    .previous:hover {
+        border: 1.5px solid #1a5276 !important;
+    }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    border: 1.5px solid #1a5276 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: 1.5px solid #1a5276 !important;
+}
+
+.espacio {
+    padding-bottom: 20px !important;
+}
 /*INCIO CAMBIIOS YISUS*/
 .btn-text-white{
     color:white !important;
