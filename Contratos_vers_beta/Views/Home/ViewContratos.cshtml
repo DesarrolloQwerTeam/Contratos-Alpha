@@ -61,30 +61,30 @@
                                 .HtmlAttributes(new { style = "height:600px;" })
                                 .Columns(columns =>
                                 {
-                                    columns.Bound(c => c.CLAVE_DEL_CONTRATO).Width(320);
-                                    columns.Bound(c => c.FECHA).Width(320);
-                                    columns.Bound(c => c.EMPRESA).Width(320);
-                                    columns.Bound(c => c.APODERADO).Width(320);
-                                    columns.Bound(c => c.FIRMADO).Width(200);
-                                    columns.Bound(c => c.EMPRESA_1).Width(320);
-                                    columns.Bound(c => c.APODERADO_1).Width(320);
-                                    columns.Bound(c => c.FIRMADO_1).Width(200);
-                                    columns.Bound(c => c.EMPRESA_2).Width(320);
-                                    columns.Bound(c => c.APODERADO_2).Width(320);
-                                    columns.Bound(c => c.FIRMADO_2).Width(200);
-                                    columns.Bound(c => c.CONTRAPRESTACION_IVA_INCLUIDO).Width(320);
-                                    columns.Bound(c => c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO).Width(320);
-                                    columns.Bound(c => c.ORIGINAL_O_COPIA).Width(200);
-                                    columns.Bound(c => c.ANIO_DE_FIRMA).Width(320);
-                                    columns.Bound(c => c.OBSERVACIONES).Width(320);
-                                    columns.Bound(c => c.FINALIZADO).Width(200);
-                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" }).ToHtmlString()).Title("").Width(100);
-                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" }).ToHtmlString()).Title("").Width(110);
-                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-success btn-text-white" }).ToHtmlString()).Title("").Width(130);
-                                    columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank" }).ToHtmlString()).Title("").Width(120);
-                                })
+                                columns.Bound(c => c.CLAVE_DEL_CONTRATO).Width(320);
+                                columns.Bound(c => c.FECHA).Width(320).ClientTemplate("<div style='text-align:center;'>#= FECHA ? kendo.toString(kendo.parseDate(FECHA, 'yyyy-MM-dd'), 'MM/dd/yyyy') : '' #</div>");
+            columns.Bound(c => c.EMPRESA).Width(320);
+            columns.Bound(c => c.APODERADO).Width(320);
+            columns.Bound(c => c.FIRMADO).Width(200).ClientTemplate("<div style='text-align:center;'>#= FIRMADO ? 'Sí' : 'No' #</div>");
+            columns.Bound(c => c.EMPRESA_1).Width(320);
+            columns.Bound(c => c.APODERADO_1).Width(320);
+            columns.Bound(c => c.FIRMADO_1).Width(200).ClientTemplate("<div style='text-align:center;'>#= FIRMADO_1 ? 'Sí' : 'No' #</div>");
+            columns.Bound(c => c.EMPRESA_2).Width(320);
+            columns.Bound(c => c.APODERADO_2).Width(320);
+            columns.Bound(c => c.FIRMADO_2).Width(200).ClientTemplate("<div style='text-align:center;'>#= FIRMADO_2 ? 'Sí' : 'No' #</div>");
+            columns.Bound(c => c.CONTRAPRESTACION_IVA_INCLUIDO).Width(320);
+            columns.Bound(c => c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO).Width(320);
+            columns.Bound(c => c.ORIGINAL_O_COPIA).Width(200).ClientTemplate("<div style='text-align:center;'>#= ORIGINAL_O_COPIA ? 'Original' : 'Copia' #</div>");
+            columns.Bound(c => c.ANIO_DE_FIRMA).Width(320);
+            columns.Bound(c => c.OBSERVACIONES).Width(320);
+            columns.Bound(c => c.FINALIZADO).Width(200).ClientTemplate("<div style='text-align:center;'>#= FINALIZADO ? 'Sí' : 'No' #</div>");
+            columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" }).ToHtmlString()).Title("").Width(100);
+            columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" }).ToHtmlString()).Title("").Width(110);
+            columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-success btn-text-white" }).ToHtmlString()).Title("").Width(130);
+            columns.Bound(c => c.Id).Filterable(ftb => ftb.Cell(cell => cell.Enabled(false))).ClientTemplate(Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = "?id=#=Id#" }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank" }).ToHtmlString()).Title("").Width(120);
+        })
                                 .Scrollable().Filterable(filterable => filterable.Messages(m => m.IsFalse("No"))
-                                
+
                                 .Messages(m => m.IsTrue("Sí")))
                                 .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
                                 .Filterable()

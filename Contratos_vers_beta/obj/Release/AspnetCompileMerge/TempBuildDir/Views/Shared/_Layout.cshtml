@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Contratos (Beta)</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/all.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="http://kendo.cdn.telerik.com/2018.2.516/styles/kendo.common-bootstrap.min.css" />
+        <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2018.2.516/styles/kendo.bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/Scripts/css/estilos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/esm/"
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.aspnetmvc.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.timezones.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.aspnetmvc.min.js"></script>
+
+     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <link href="~/Content/css/estilos.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ajax")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top color-azul">
+
+
+        <img src="~/Content/img/qwerteamtransparente.png" class="d-inline-block align-top logo" alt="" href="/Home/Index">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                @*<li class="nav-item  @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                    @Html.ActionLink("Inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link nav-link-contratos" })
+                </li>*@
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link-contratos" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contratos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @Html.ActionLink("Ver Contratos", "ViewContratos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        @Html.ActionLink("Importar Excel", "ImportExcelContratos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        @Html.ActionLink("Admin Cuentas", "AdminCuentas", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        @Html.ActionLink("Admin Movimientos", "AdminMovimientos", "Home", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        
+                    </div>
+                </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+
+    </nav>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

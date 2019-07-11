@@ -21,6 +21,12 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="bin/ApplicationInsights.config">
       <publishTime>06/26/2019 13:58:33</publishTime>
     </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>07/02/2019 16:03:53</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>07/02/2019 16:03:53</publishTime>
+    </File>
     <File Include="bin/bg-BG/Kendo.Mvc.resources.dll">
       <publishTime>06/20/2018 06:26:56</publishTime>
     </File>
@@ -43,10 +49,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/26/2019 13:58:33</publishTime>
     </File>
     <File Include="bin/Contratos_vers_beta.dll">
-      <publishTime>07/02/2019 15:56:48</publishTime>
+      <publishTime>07/02/2019 16:32:36</publishTime>
     </File>
     <File Include="bin/Contratos_vers_beta.pdb">
-      <publishTime>07/02/2019 15:56:48</publishTime>
+      <publishTime>07/02/2019 16:32:36</publishTime>
     </File>
     <File Include="bin/cs-CZ/Kendo.Mvc.resources.dll">
       <publishTime>06/20/2018 06:26:56</publishTime>
@@ -513,6 +519,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Global.asax">
       <publishTime>06/26/2019 13:58:33</publishTime>
     </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/02/2019 16:03:44</publishTime>
+    </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>06/26/2019 13:58:33</publishTime>
     </File>
@@ -721,7 +730,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/26/2019 13:58:34</publishTime>
     </File>
     <File Include="Views/Home/ViewContratos.cshtml">
-      <publishTime>06/26/2019 14:06:25</publishTime>
+      <publishTime>07/02/2019 16:49:22</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>06/26/2019 13:58:34</publishTime>
@@ -808,7 +817,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/26/2019 13:58:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/02/2019 15:56:48</publishTime>
+      <publishTime>07/02/2019 16:07:30</publishTime>
     </File>
   </ItemGroup>
 </Project>
