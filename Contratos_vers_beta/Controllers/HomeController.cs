@@ -61,18 +61,8 @@ namespace Contratos_vers_beta.Controllers
             {
                 using (AppDbContext app = new AppDbContext())
                 {
-                    var RegisterContratos = new ModifiedContratos
-                    {
-                        ExecutedAction = "View",
-                        ActionHour = DateTime.Now,
-                        EmailUser = User.Identity.GetUserName(),
-                        IdUser = User.Identity.GetUserId(),
-                        IdContrato = null,
-                        IdPDFContrato = null,
-                    };
-
-                    app.ModifiedContratos.Add(RegisterContratos);
-                    app.SaveChanges();
+                    var model = app.Contratos.ToList();
+                    return View(model);
                 }
             }
             catch (Exception ex)
@@ -80,8 +70,6 @@ namespace Contratos_vers_beta.Controllers
                 ViewBag.Error = ex.Message;
                 return View();
             }
-
-            return View();
         }
 
         [HttpPost]
@@ -231,7 +219,7 @@ namespace Contratos_vers_beta.Controllers
                         {
                             var RegisterContratos = new ModifiedContratos
                             {
-                                ExecutedAction = "Create",
+                                ExecutedAction = "Creación de contrato",
                                 ActionHour = DateTime.Now,
                                 EmailUser = User.Identity.GetUserName(),
                                 IdUser = User.Identity.GetUserId(),
@@ -326,7 +314,7 @@ namespace Contratos_vers_beta.Controllers
                         {
                             var RegisterContratos = new ModifiedContratos
                             {
-                                ExecutedAction = "ImportPDF",
+                                ExecutedAction = "Importar PDF",
                                 ActionHour = DateTime.Now,
                                 EmailUser = User.Identity.GetUserName(),
                                 IdUser = User.Identity.GetUserId(),

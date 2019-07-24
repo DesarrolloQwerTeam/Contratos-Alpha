@@ -148,11 +148,11 @@ namespace Contratos_vers_beta.Models
                 tabla.AddCell(cellFIR2);
                 //Empresa 3
                 Cell cellEMP3 = new Cell();
-                cellEMP3.Add(new Paragraph((item.EMPRESA_2 != string.Empty) ? item.EMPRESA_2 : "")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(75);
+                cellEMP3.Add(new Paragraph((item.EMPRESA_2 != null) ? item.EMPRESA_2 : "NO APLICA")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(75);
                 tabla.AddCell(cellEMP3);
                 //Apoderado 3
                 Cell cellAPO3 = new Cell();
-                cellAPO3.Add(new Paragraph((item.APODERADO_2 != string.Empty) ? item.APODERADO_2 : "")).SetMaxWidth(63).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
+                cellAPO3.Add(new Paragraph((item.APODERADO_2 != null) ? item.APODERADO_2 : "NO APLICA")).SetMaxWidth(63).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
                 tabla.AddCell(cellAPO3);
                 //Firmado 3
                 Cell cellFIR3 = new Cell();

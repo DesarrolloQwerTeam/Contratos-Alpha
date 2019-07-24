@@ -10,9 +10,9 @@
     <p class="lead text-align">Administras las cuentas registradas</p>
 </div>
 
-<div class="table-responsive-lg espacio">
-    <table class="table table-bordered tabla-text-centrado table-striped" id="tablacuenta">
-        <thead class="thead-dark">
+<div class=" espacio">
+    <table class="table table-bordered tabla-text-centrado table-striped table-responsive-lg" id="tablacuenta">
+        <thead>
             <tr>
                 <th class="header-table" scope="col">Inicio de Sesión</th>
                 <th class="header-table" scope="col">Fin de Sesión</th>
@@ -20,6 +20,7 @@
                 @*<th class="header-table" scope="col">Inactividad</th>*@
             </tr>
         </thead>
+
         <tbody>
             @foreach (var dato in Model)
             {
@@ -34,9 +35,31 @@
     </table>
 
 </div>
-<script>
+@*<script>
     $(document).ready(function () {
         $('#tablacuenta').dataTable({
+            
+            initComplete: function () {
+                this.api().columns().every(function () {
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo($(column.footer()).empty())
+                        .on('change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
+            },
+
             language: {
                 "search": "Buscar:",
                 "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
@@ -59,6 +82,39 @@
             }
            
         });
+    });
+</script>*@
+
+<script>
+    $(document).ready(function () {
+        $('#tablacuenta').dataTable({
+            orderCellsTop: true,
+            fixedHeader: true,
+            language: {
+                "search": "Buscar:",
+                "info": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                "infoEmpty": "No hay registros",
+                "lengthMenu": "Mostrar _MENU_ registros",
+                paginate: {
+                    first: '«',
+                    previous: '<',
+                    next: '>',
+                    last: '»'
+                },
+                aria: {
+                    paginate: {
+                        first: 'Primero',
+                        previous: 'Último',
+                        next: 'Siguiente',
+                        last: 'Última'
+                    }
+                }
+            }
+
+        });
+       
+
+       
     });
 </script>
 

@@ -222,7 +222,7 @@ namespace Contratos_vers_beta.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ViewContratos", "Home");
                 }
                 AddErrors(result);
             }
@@ -453,7 +453,7 @@ namespace Contratos_vers_beta.Controllers
             await UpdateLogout();
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ViewContratos", "Home");
         }
 
         private async Task UpdateLogout()
