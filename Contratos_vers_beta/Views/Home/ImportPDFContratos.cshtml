@@ -2,11 +2,11 @@
 @{
     ViewBag.Title = "ImportPDFContratos";
 }
-
-<div class="jumbotron">
-    <h1 class="display-4">¡Importar archivo PDF!</h1>
-    <p class="lead">Seleccionar el archivo PDF y revisar los datos antes de guardar los cambios.</p>
+<div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
+    <h1 class="display-5 text-align">¡Importar archivo PDF!</h1>
+    <p class="lead text-align">Seleccionar el archivo PDF y revisar los datos antes de guardar los cambios.</p>
 </div>
+
 
 @using (Html.BeginForm("ImportPDFContratos", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

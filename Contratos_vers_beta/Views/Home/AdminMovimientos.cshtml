@@ -1,11 +1,12 @@
 ﻿@model Contratos_vers_beta.Models.DatosFiltrados
+    @{
     
     ViewBag.Title = "AdminMovimientos";
 }
 
 <div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
-    <h1 class="display-5 text-align">¡Lista de Movimientos!</h1>
-    <p class="lead text-align">Seleccione el usuario y consulte los movimientos.</p>
+    <h1 class="display-5 text-align">Movimientos</h1>
+   
 </div>
 <label class="select-user" for="dato">SELECCIONAR USUARIO:</label>
 <form method="GET">
@@ -21,7 +22,7 @@
 
     <input class="input-design-button" type="submit" value="Aceptar" />
 </form>
-<div class=" espacio">
+<div style="margin-bottom: 2rem">
     <table class="table table-bordered tabla-text-centrado table-striped table-responsive-lg" id="tablamovs">
         <thead>
             <tr>

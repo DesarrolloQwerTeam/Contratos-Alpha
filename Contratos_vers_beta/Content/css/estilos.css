@@ -3,7 +3,9 @@
   src: url(/Content/css/SourceSansPro-Regular.ttf);
 }
 
-
+.table.dataTable{
+    border-collapse:collapse !important;
+}
 .input-style {
     border-radius: 5px !important;
     border: 1.4px solid #F2F4F4;
