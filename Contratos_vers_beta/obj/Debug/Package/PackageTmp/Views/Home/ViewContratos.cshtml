@@ -5,8 +5,8 @@
 }
 
 <div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
-    <h1 class="display-5 text-align">¡Lista de Contratos!</h1>
-    <p class="lead text-align">Contratos ordenados de forma descendente.</p>
+    <h1 class="display-5 text-align">Contratos</h1>
+    
 </div>
 
 @if (ViewData["Error"] != null)
@@ -45,63 +45,70 @@
         @Html.ActionLink("Importar Excel", "ImportExcelContratos", "Home", routeValues: null, htmlAttributes: new { @class = "btn color-verde boton-menu" })
     </div>
     <div class="col-xl-2">
-        @Html.ActionLink("Exportar PDF", "CreaPDF", "Home", routeValues: null, htmlAttributes: new { @class = "btn color-verde boton-menu" })
+        @Html.ActionLink("Exportar PDF", "CreaPDF", "Home", routeValues: null, htmlAttributes: new { @class = "btn color-rojo boton-menu" })
     </div>
 </div>
 
+<div style="margin-bottom: 2rem">
+    <table id="example" class=" table table-bordered table-striped text-center">
 
-<table id="example" class="display table table-bordered tabla-text-centrado table-striped table-responsive-lg" style="width:100%">
-    <thead>
-        <tr>
-            <th>Clave del Contrato</th>
-            <th>Fecha</th>
-            <th>Empresa 1</th>
-            <th>Apoderado 1</th>
-            <th>Firma Apoderado 1</th>
-            <th>Empresa 2</th>
-            <th>Apoderado 2</th>
-            <th>Firma Apoderado 2</th>
-            <th>Empresa 3</th>
-            <th>Apoderado 3</th>
-            <th>Firma Apoderado 3</th>
-            <th>Contraprestación IVA incluido</th>
-            <th>Vigencia del Convenio</th>
-            <th>Original o Copia</th>
-            <th>Año de la firma</th>
-            <th>Observaciones</th>
-            <th>Finalizado</th>
-            <th colspan="4"></th>
-        </tr>
-    </thead>
-    <tbody >
-        @foreach (var c in Model)
-        {
-        <tr>
-            <td style="vertical-align:middle">@c.CLAVE_DEL_CONTRATO</td>
-            <td style="vertical-align:middle">@(c.FECHA.HasValue ? c.FECHA.Value.ToShortDateString() : "NO INDICA")</td>
-            <td style="vertical-align:middle">@c.EMPRESA</td>
-            <td style="vertical-align:middle">@c.APODERADO</td>
-            <td style="vertical-align:middle">@(c.FIRMADO ? "SI" : "NO")</td>
-            <td style="vertical-align:middle">@c.EMPRESA_1</td>
-            <td style="vertical-align:middle">@c.APODERADO_1</td>
-            <td style="vertical-align:middle">@(c.FIRMADO_1 ? "SI" : "NO")</td>
-            <td style="vertical-align:middle">@(c.EMPRESA_2.IsEmpty() ? "NO INDICA" : c.EMPRESA_2)</td>
-            <td style="vertical-align:middle">@(c.APODERADO_2.IsEmpty() ? "NO INDICA" : c.APODERADO_2)</td>
-            <td style="vertical-align:middle">@((c.APODERADO_2.IsEmpty() && c.EMPRESA_2.IsEmpty())? "NO INDICA" : (c.FIRMADO_2 ? "SI" : "NO"))</td>
-            <td style="vertical-align:middle">@c.CONTRAPRESTACION_IVA_INCLUIDO</td>
-            <td style="vertical-align:middle">@c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO</td>
-            <td style="vertical-align:middle">@(c.ORIGINAL_O_COPIA ? "COPIA" : "ORIGINAL")</td>
-            <td style="vertical-align:middle">@c.ANIO_DE_FIRMA</td>
-            <td style="vertical-align:middle">@(c.OBSERVACIONES.IsEmpty() ? "NO INDICA" : c.OBSERVACIONES)</td>
-            <td style="vertical-align:middle">@(c.FINALIZADO ? "SI" : "NO")</td>
-            <td style="vertical-align:middle">@Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-warning btn-text-white"})</td>
-            <td style="vertical-align:middle">@Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-danger btn-text-white"})</td>
-            <td style="vertical-align:middle">@Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-success btn-text-white" })</td>
-            <td style="vertical-align:middle">@Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank"})</td>
-        </tr>
-        }
-    </tbody>
-</table>
+        <thead>
+            <tr style="font-size:14px">
+                <th>Clave del Contrato</th>
+                <th>Fecha</th>
+                <th style="width:210px !important;">Empresa 1</th>
+                <th style="width:220px !important;">Apoderado 1</th>
+                <th>Firma Apoderado 1</th>
+                <th>Empresa 2</th>
+                <th style="width:220px !important;">Apoderado 2</th>
+                <th >Firma Apoderado 2</th>
+                <th>Empresa 3</th>
+                <th style="width:220px !important;">Apoderado 3</th>
+                <th>Firma Apoderado 3</th>
+                <th style="width:200px !important;">Contraprestación IVA incluido</th>
+                <th>Vigencia del Convenio</th>
+                <th>Original o Copia</th>
+                <th>Año de la firma</th>
+                <th>Observaciones</th>
+                <th>Finalizado</th>
+                <th style="visibility:hidden"></th>
+                <th style="visibility:hidden"></th>
+                <th style="visibility:hidden"></th>
+                <th style="visibility:hidden"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr style="font-size:12px !important;">
+                    <td style="vertical-align:middle">@($"RHDEMO00{c.Id}")</td>
+                    <td style="vertical-align:middle">@(c.FECHA.HasValue ? c.FECHA.Value.ToShortDateString() : "NO INDICA")</td>
+                    <td style="vertical-align:middle">@c.EMPRESA</td>
+                    <td style="vertical-align:middle">@c.APODERADO</td>
+                    <td style="vertical-align:middle">@(c.FIRMADO ? "SI" : "NO")</td>
+                    <td style="vertical-align:middle">@c.EMPRESA_1</td>
+                    <td style="vertical-align:middle">@c.APODERADO_1</td>
+                    <td style="vertical-align:middle">@(c.FIRMADO_1 ? "SI" : "NO")</td>
+                    <td style="vertical-align:middle">@(c.EMPRESA_2.IsEmpty() ? "NO INDICA" : c.EMPRESA_2)</td>
+                    <td style="vertical-align:middle">@(c.APODERADO_2.IsEmpty() ? "NO INDICA" : c.APODERADO_2)</td>
+                    <td style="vertical-align:middle">@((c.APODERADO_2.IsEmpty() && c.EMPRESA_2.IsEmpty()) ? "NO INDICA" : (c.FIRMADO_2 ? "SI" : "NO"))</td>
+                    <td style="vertical-align:middle">@c.CONTRAPRESTACION_IVA_INCLUIDO</td>
+                    <td style="vertical-align:middle">@c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO</td>
+                    <td style="vertical-align:middle">@(c.ORIGINAL_O_COPIA ? "COPIA" : "ORIGINAL")</td>
+                    <td style="vertical-align:middle">@c.ANIO_DE_FIRMA</td>
+                    <td style="vertical-align:middle">@(c.OBSERVACIONES.IsEmpty() ? "NO INDICA" : c.OBSERVACIONES)</td>
+                    <td style="vertical-align:middle">@(c.FINALIZADO ? "SI" : "NO")</td>
+                    <td style="vertical-align:middle">@Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" })</td>
+                    <td style="vertical-align:middle">@Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" })</td>
+                    <td style="vertical-align:middle">@Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-success btn-text-white" })</td>
+                    <td style="vertical-align:middle">@Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
 
 
 
@@ -109,51 +116,49 @@
     $(document).ready(function () {
 
         // Setup - add a text input to each footer cell
-        $('#example thead tr').clone(true).appendTo('#example thead');
+        $('#example  thead tr').clone(false).appendTo('#example thead');
         $('#example thead tr:eq(1) th').each(function (i) {
-                    var title = $(this).text();
+            var title = $(this).text();
             $(this).html('<input type="text" class="input-style" placeholder="Buscar ' + title + '" />');
 
             $('input', this).on('keyup change', function () {
-                        if (table.column(i).search() !== this.value) {
-                            table
-                                .column(i)
-                                .search(this.value)
-                                .draw();
-                        }
-                    });
-                });
+                if (table.column(i).search() !== this.value) {
+                    table
+                        .column(i)
+                        .search(this.value)
+                        .draw();
+                }
+            });
+        });
 
-                var table = $('#example').DataTable({
-                orderCellsTop: true,
-            fixedHeader: true,
+        var table = $('#example').DataTable({
             orderCellsTop: true,
-            fixedHeader: true,
+            scrollX: true,
             language: {
-                        "search": "Buscar:",
+                "search": "Buscar:",
                 "info": "Mostrando del _START_ al _END_ de _TOTAL_ contratos",
                 "infoEmpty": "No hay contratos",
                 "lengthMenu": "Mostrar _MENU_ contratos",
                 paginate: {
-                        first: '«',
+                    first: '«',
                     previous: '<',
                     next: '>',
                     last: '»'
                 },
                 aria: {
-                        paginate: {
-                            first: 'Primero',
+                    paginate: {
+                        first: 'Primero',
                         previous: 'Último',
                         next: 'Siguiente',
                         last: 'Última'
-                        }
-                        }
                     }
+                }
+            }
 
 
-                });
+        });
 
 
-                new $.fn.dataTable.FixedHeader(table);
-            });
+        new $.fn.dataTable.FixedHeader(table);
+    });
 </script>

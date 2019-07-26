@@ -6,11 +6,11 @@
 
 
 <div class="jumbotron stylejumbo" style="margin-top:4.5rem;">
-    <h1 class="display-5 text-align">¡Administrador de Cuentas!</h1>
-    <p class="lead text-align">Administras las cuentas registradas</p>
+    <h1 class="display-5 text-align">Cuentas</h1>
+   
 </div>
 
-<div class=" espacio">
+<div style="margin-bottom: 2rem">
     <table class="table table-bordered tabla-text-centrado table-striped table-responsive-lg" id="tablacuenta">
         <thead>
             <tr>
@@ -87,7 +87,7 @@
 
 <script>
     $(document).ready(function () {
-        $('#tablacuenta').dataTable({
+        $('#tablacuenta').dataTable({ 
             orderCellsTop: true,
             fixedHeader: true,
             language: {
@@ -110,11 +110,7 @@
                     }
                 }
             }
-
         });
-       
-
-       
     });
 </script>
 

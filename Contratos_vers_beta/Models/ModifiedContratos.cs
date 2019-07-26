@@ -28,7 +28,7 @@ namespace Contratos_vers_beta.Models
 
         public string ClaveContrato { get; set; }
 
-        public string NombrePDFContrato { get; set; }
+        //public string NombrePDFContrato { get; set; }
     }
 
 }

@@ -281,6 +281,10 @@
     <Compile Include="Migrations\201905312146489_fecha.Designer.cs">
       <DependentUpon>201905312146489_fecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907262227491_Cambios demo.cs" />
+    <Compile Include="Migrations\201907262227491_Cambios demo.Designer.cs">
+      <DependentUpon>201907262227491_Cambios demo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -477,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905312146489_fecha.resx">
       <DependentUpon>201905312146489_fecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907262227491_Cambios demo.resx">
+      <DependentUpon>201907262227491_Cambios demo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

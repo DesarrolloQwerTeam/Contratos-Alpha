@@ -56,7 +56,6 @@ namespace Contratos_vers_beta.Controllers
                 db.SaveChanges();
                 return RedirectToAction("ViewContratos", "Home");
             }
-
             return View(contratos);
         }
 

@@ -219,12 +219,11 @@ namespace Contratos_vers_beta.Controllers
                         {
                             var RegisterContratos = new ModifiedContratos
                             {
-                                ExecutedAction = $"Contrato RHDEMO00{item.Id} agregado",
+                                ExecutedAction = $"Exportó de un Excel, el contrato RHDEMO00{item.Id}",
                                 ActionHour = DateTime.Now,
                                 EmailUser = User.Identity.GetUserName(),
                                 IdUser = User.Identity.GetUserId(),
                                 ClaveContrato = item.CLAVE_DEL_CONTRATO,
-                                NombrePDFContrato = app.PDFContratos.Select(x => x.Contratos == item),
                             };
                             modifieds.Add(RegisterContratos);
                         }
@@ -311,12 +310,11 @@ namespace Contratos_vers_beta.Controllers
                     {
                         var RegisterContratos = new ModifiedContratos
                         {
-                            ExecutedAction = "Importató un PDF",
+                            ExecutedAction = $"Se anexó al contrato el archivo{FinalResult.NameFile}",
                             ActionHour = DateTime.Now,
                             EmailUser = User.Identity.GetUserName(),
                             IdUser = User.Identity.GetUserId(),
                             ClaveContrato = model.Contratos.CLAVE_DEL_CONTRATO,
-                            NombrePDFContrato = FinalResult.NameFile,
                         };
 
                         app.ModifiedContratos.Add(RegisterContratos);
@@ -335,7 +333,7 @@ namespace Contratos_vers_beta.Controllers
         }
 
         [HttpGet]
-        public ActionResult DisplayPDFContratos(int? Id)
+        public async Task<ActionResult> DisplayPDFContratos(int? Id)
         {
             if (Id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -353,7 +351,20 @@ namespace Contratos_vers_beta.Controllers
                 ViewBag.Error = "No existe PDF para este contrato.";
                 return View("ViewContratos");
             }
+            using (AppDbContext app = new AppDbContext())
+            {
+                var RegisterContratos = new ModifiedContratos
+                {
+                    ExecutedAction = $"Consultó el PDF el archivo {PDFContratos.NameFile}",
+                    ActionHour = DateTime.Now,
+                    EmailUser = User.Identity.GetUserName(),
+                    IdUser = User.Identity.GetUserId(),
+                    ClaveContrato = Convert.ToString(Id),
+                };
 
+                app.ModifiedContratos.Add(RegisterContratos);
+                await app.SaveChangesAsync();
+            }
             byte[] byteArray = PDFContratos.File;
             MemoryStream PDFStream = new MemoryStream();
             PDFStream.Write(byteArray, 0, byteArray.Length);
@@ -363,7 +374,7 @@ namespace Contratos_vers_beta.Controllers
         }
 
         [HttpGet]
-        public FileResult CreaPDF()
+        public async Task<FileResult> CreaPDF()
         {
             MemoryStream ms = new MemoryStream();
 
@@ -371,7 +382,20 @@ namespace Contratos_vers_beta.Controllers
             ms = new MemoryStream();
             ms.Write(byteStream, 0, byteStream.Length);
             ms.Position = 0;
-            
+            using (AppDbContext app = new AppDbContext())
+            {
+                var RegisterContratos = new ModifiedContratos
+                {
+                    ExecutedAction = $"Generó un archivo PDF",
+                    ActionHour = DateTime.Now,
+                    EmailUser = User.Identity.GetUserName(),
+                    IdUser = User.Identity.GetUserId(),
+                    ClaveContrato = null,
+                };
+
+                app.ModifiedContratos.Add(RegisterContratos);
+                await app.SaveChangesAsync();
+            }
             return new FileStreamResult(ms, "application/pdf");
         }
         [HttpGet]
