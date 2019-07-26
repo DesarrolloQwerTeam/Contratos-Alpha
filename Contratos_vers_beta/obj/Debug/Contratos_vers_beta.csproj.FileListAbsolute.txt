@@ -1875,3 +1875,6 @@ C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contr
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.dll
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.pdb
 C:\Users\Diseño1\Documents\Proyectos Prosis\ContratosAxel\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\Contratos-Alpha\Contratos_vers_beta\bin\Content\img\logo.jpg
+C:\Users\Rodrigo\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.Migrations.Cambios.resources
+C:\Users\Rodrigo\Desktop\Contratos-Alpha\Contratos_vers_beta\obj\Debug\Contratos_vers_beta.Migrations.fecha.resources

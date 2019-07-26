@@ -26,9 +26,9 @@ namespace Contratos_vers_beta.Models
         [Display(Name = "Hora de ejecución")]
         public DateTime ActionHour { get; set; }
 
-        public int? IdContrato { get; set; }
+        public string ClaveContrato { get; set; }
 
-        public int? IdPDFContrato { get; set; }
+        public string NombrePDFContrato { get; set; }
     }
 
 }

@@ -78,7 +78,7 @@ namespace Contratos_vers_beta.Models
             tabla.SetFontSize(4).SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
             //.SetBackgroundColor(WebColors.GetRGBColor("#FF0000"))
 
-            Cell headerCell = new Cell().Add(new Paragraph("ID").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
+            Cell headerCell = new Cell().Add(new Paragraph("CLAVE").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
             tabla.AddHeaderCell(headerCell);
 
             headerCell = new Cell().Add(new Paragraph("FECHA").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
@@ -116,7 +116,7 @@ namespace Contratos_vers_beta.Models
             {
                 //ID
                 Cell cellID = new Cell();
-                cellID.Add(new Paragraph(item.Id.ToString()).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)).SetWidth(6).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
+                cellID.Add(new Paragraph($"RHDEMO00{item.Id.ToString()}").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)).SetWidth(6).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
                 tabla.AddCell(cellID);
                 //Fecha
                 Cell cellFecha = new Cell();

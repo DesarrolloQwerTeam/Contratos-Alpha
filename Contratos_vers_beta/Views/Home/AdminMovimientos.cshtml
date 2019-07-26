@@ -28,9 +28,9 @@
             <tr>
                 <th class="header-table" scope="col">Correo</th>
                 <th class="header-table" scope="col">Movimiento</th>
-                <th class="header-table" scope="col">Hora de Movimiento</th>
-                <th class="header-table" scope="col">ID Contrato</th>
-                <th class="header-table" scope="col">ID PDF Contrato</th>
+                <th class="header-table" scope="col">Hora de movimiento</th>
+                <th class="header-table" scope="col">Clave de contrato</th>
+                <th class="header-table" scope="col">Nombre PDF Contrato</th>
 
             </tr>
         </thead>
@@ -42,8 +42,8 @@
                     <td>@data.EmailUser</td>
                     <td>@data.ExecutedAction</td>
                     <td>@data.ActionHour</td>
-                    <td>@data.IdContrato</td>
-                    <td>@data.IdPDFContrato</td>
+                    <td>@($"RHDEMO00{data.Id}")</td>
+                    <td>@data.NombrePDFContrato</td>
 
                 </tr>
             }

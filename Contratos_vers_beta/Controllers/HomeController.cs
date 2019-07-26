@@ -219,12 +219,12 @@ namespace Contratos_vers_beta.Controllers
                         {
                             var RegisterContratos = new ModifiedContratos
                             {
-                                ExecutedAction = "Creación de contrato",
+                                ExecutedAction = $"Contrato RHDEMO00{item.Id} agregado",
                                 ActionHour = DateTime.Now,
                                 EmailUser = User.Identity.GetUserName(),
                                 IdUser = User.Identity.GetUserId(),
-                                IdContrato = item.Id,
-                                IdPDFContrato = null,
+                                ClaveContrato = item.CLAVE_DEL_CONTRATO,
+                                NombrePDFContrato = app.PDFContratos.Select(x => x.Contratos == item),
                             };
                             modifieds.Add(RegisterContratos);
                         }
@@ -302,40 +302,33 @@ namespace Contratos_vers_beta.Controllers
                     model.File = File;
                     model.NameFile = model.FileView.FileName;
                     model.Contratos = contratos;
+                    db.PDFContratos.Add(model);
+                    db.SaveChanges();
 
-                    if (ModelState.IsValid)
+                    var FinalResult = db.PDFContratos.ToList().LastOrDefault();
+
+                    using (AppDbContext app = new AppDbContext())
                     {
-                        db.PDFContratos.Add(model);
-                        db.SaveChanges();
-
-                        var FinalResult = db.PDFContratos.ToList().LastOrDefault();
-
-                        using (AppDbContext app = new AppDbContext())
+                        var RegisterContratos = new ModifiedContratos
                         {
-                            var RegisterContratos = new ModifiedContratos
-                            {
-                                ExecutedAction = "Importar PDF",
-                                ActionHour = DateTime.Now,
-                                EmailUser = User.Identity.GetUserName(),
-                                IdUser = User.Identity.GetUserId(),
-                                IdContrato = model.Contratos.Id,
-                                IdPDFContrato = FinalResult.Id,
-                            };
+                            ExecutedAction = "Importató un PDF",
+                            ActionHour = DateTime.Now,
+                            EmailUser = User.Identity.GetUserName(),
+                            IdUser = User.Identity.GetUserId(),
+                            ClaveContrato = model.Contratos.CLAVE_DEL_CONTRATO,
+                            NombrePDFContrato = FinalResult.NameFile,
+                        };
 
-                            app.ModifiedContratos.Add(RegisterContratos);
-                            await app.SaveChangesAsync();
-                        }
-
-                        ViewBag.Success = "Se guardaró el PDF correctamente.";
-                        return View("ViewContratos");
+                        app.ModifiedContratos.Add(RegisterContratos);
+                        await app.SaveChangesAsync();
                     }
 
-                    ViewBag.Error = "Ha ocurrido un error inesperado.";
+                    ViewBag.Success = "Se guardaró el PDF correctamente.";
                     return View();
                 }
                 else
                 {
-                    ViewBag.Error = "Por favor seleccionar un archivo excel";
+                    ViewBag.Error = "Por favor selecciona un archivo PDF.";
                     return View();
                 }
             }

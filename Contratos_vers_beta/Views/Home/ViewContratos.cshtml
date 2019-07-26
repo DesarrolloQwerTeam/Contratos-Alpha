@@ -81,7 +81,7 @@
             @foreach (var c in Model)
             {
                 <tr style="font-size:12px !important;">
-                    <td style="vertical-align:middle">@c.CLAVE_DEL_CONTRATO</td>
+                    <td style="vertical-align:middle">@($"RHDEMO00{c.Id}")</td>
                     <td style="vertical-align:middle">@(c.FECHA.HasValue ? c.FECHA.Value.ToShortDateString() : "NO INDICA")</td>
                     <td style="vertical-align:middle">@c.EMPRESA</td>
                     <td style="vertical-align:middle">@c.APODERADO</td>
