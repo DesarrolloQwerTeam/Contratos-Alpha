@@ -1,4 +1,4 @@
-namespace Contratos_vers_beta.Migrations
+namespace Contratos_vers_beta.DataContextMigrations
 {
     using System;
     using System.Data.Entity;
@@ -10,6 +10,7 @@ namespace Contratos_vers_beta.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"DataContextMigrations";
         }
 
         protected override void Seed(Contratos_vers_beta.Models.AppDbContext context)

@@ -6,7 +6,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Diseño1\Desktop\ContratosWeb</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\MACHINE-1\Desktop\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -49,10 +49,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/26/2019 16:16:52</publishTime>
     </File>
     <File Include="bin/Contratos_vers_beta.dll">
-      <publishTime>07/26/2019 17:28:05</publishTime>
+      <publishTime>07/26/2019 18:48:41</publishTime>
     </File>
     <File Include="bin/Contratos_vers_beta.pdb">
-      <publishTime>07/26/2019 17:28:05</publishTime>
+      <publishTime>07/26/2019 18:48:41</publishTime>
     </File>
     <File Include="bin/cs-CZ/Kendo.Mvc.resources.dll">
       <publishTime>06/20/2018 06:26:56</publishTime>
@@ -817,7 +817,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/26/2019 16:16:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/26/2019 17:34:59</publishTime>
+      <publishTime>07/26/2019 18:48:42</publishTime>
     </File>
   </ItemGroup>
 </Project>

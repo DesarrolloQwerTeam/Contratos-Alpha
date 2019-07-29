@@ -241,6 +241,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationContextMigrations\201907262346582_Initial.cs" />
+    <Compile Include="ApplicationContextMigrations\201907262346582_Initial.Designer.cs">
+      <DependentUpon>201907262346582_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContextMigrations\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -254,6 +259,15 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModifiedContratosController.cs" />
     <Compile Include="Controllers\PDFContratosController.cs" />
+    <Compile Include="DataContextMigrations\201907262340281_Initial.cs" />
+    <Compile Include="DataContextMigrations\201907262340281_Initial.Designer.cs">
+      <DependentUpon>201907262340281_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContextMigrations\201907262345508_Initial1.cs" />
+    <Compile Include="DataContextMigrations\201907262345508_Initial1.Designer.cs">
+      <DependentUpon>201907262345508_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContextMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -464,6 +478,15 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApplicationContextMigrations\201907262346582_Initial.resx">
+      <DependentUpon>201907262346582_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContextMigrations\201907262340281_Initial.resx">
+      <DependentUpon>201907262340281_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContextMigrations\201907262345508_Initial1.resx">
+      <DependentUpon>201907262345508_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810262245131_modifieddatimeanull.resx">
       <DependentUpon>201810262245131_modifieddatimeanull.cs</DependentUpon>
     </EmbeddedResource>
