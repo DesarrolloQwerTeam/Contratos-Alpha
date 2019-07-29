@@ -74,13 +74,16 @@ namespace Contratos_vers_beta.Models
 
 
             //tabla de contenido
-            Table tabla = new Table(16);
+            Table tabla = new Table(18);
             tabla.SetFontSize(4).SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
             //.SetBackgroundColor(WebColors.GetRGBColor("#FF0000"))
 
             Cell headerCell = new Cell().Add(new Paragraph("CLAVE").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
             tabla.AddHeaderCell(headerCell);
-
+            headerCell = new Cell().Add(new Paragraph("CONTRATO O CONVENIO").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
+            tabla.AddHeaderCell(headerCell);
+            headerCell = new Cell().Add(new Paragraph("TIPO CONTRATO O CONVENIO").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
+            tabla.AddHeaderCell(headerCell);
             headerCell = new Cell().Add(new Paragraph("FECHA").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
             tabla.AddHeaderCell(headerCell);
             headerCell = new Cell().Add(new Paragraph("EMPRESA 1").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold()).SetBackgroundColor(WebColors.GetRGBColor("#7ADEF4"));
@@ -118,6 +121,14 @@ namespace Contratos_vers_beta.Models
                 Cell cellID = new Cell();
                 cellID.Add(new Paragraph($"RHDEMO00{item.Id.ToString()}").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)).SetWidth(6).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE);
                 tabla.AddCell(cellID);
+                //Contrato convenio
+                Cell cellCC = new Cell();
+                cellCC.Add(new Paragraph(item.Contrato_Convenio ? "CONTRATO" : "CONVENIO")).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(75);
+                tabla.AddCell(cellCC);
+                //TIPO
+                Cell cellTCC = new Cell();
+                cellTCC.Add(new Paragraph(item.Tipo_Contrato_Convenio)).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetMaxWidth(75);
+                tabla.AddCell(cellTCC);
                 //Fecha
                 Cell cellFecha = new Cell();
                 cellFecha.Add(new Paragraph(item.FECHA.ToString() != "" ? item.FECHA.Value.ToShortDateString() : "")).SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE).SetWidth(10);

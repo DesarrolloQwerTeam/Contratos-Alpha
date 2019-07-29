@@ -20,6 +20,15 @@ namespace Contratos_vers_beta.Models
         [Display(Name = "Fecha")]
         public DateTime? FECHA { get; set; }
 
+        [Display(Name = "Contrato o convenio")]
+        [Required]
+        public bool Contrato_Convenio { get; set; }
+
+        [Display(Name = "Tipo de contrato o convenio")]
+        [Required]
+        [StringLength(200)]
+        public string Tipo_Contrato_Convenio { get; set; }
+
         [Required]
         [Display(Name = "Empresa 1")]
         [StringLength(250)]

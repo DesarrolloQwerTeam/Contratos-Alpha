@@ -83,6 +83,8 @@ namespace Contratos_vers_beta.Controllers
                     {
                         customer.CLAVE_DEL_CONTRATO,
                         customer.FECHA,
+                        customer.Contrato_Convenio,
+                        customer.Tipo_Contrato_Convenio,
                         customer.EMPRESA,
                         customer.APODERADO,
                         customer.FIRMADO,
@@ -170,6 +172,8 @@ namespace Contratos_vers_beta.Controllers
                     {
                         CLAVE_DEL_CONTRATO = workSheet.Cells[i, 4].Text,
                         FECHA = DBNull.Value.Equals(workSheet.Cells[i, 5].Value.ToString()) == true ? (DateTime?)null : DateTime.Parse(workSheet.Cells[i, 5].Value.ToString()),
+                        Contrato_Convenio = (workSheet.Cells[i, 6].Value.ToString() == "CONTRATO") ? true : false,
+                        Tipo_Contrato_Convenio = workSheet.Cells[i, 7].Text,
                         EMPRESA = workSheet.Cells[i, 8].Text,
                         APODERADO = workSheet.Cells[i, 9].Text,
                         FIRMADO = workSheet.Cells[i, 10].Text == "SI" ? true : false,

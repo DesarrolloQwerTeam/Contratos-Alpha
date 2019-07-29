@@ -241,17 +241,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationContextMigrations\201907262346582_Initial.cs" />
-    <Compile Include="ApplicationContextMigrations\201907262346582_Initial.Designer.cs">
-      <DependentUpon>201907262346582_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApplicationContextMigrations\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ContratosMigrations\201907291946550_Correcciones.cs" />
+    <Compile Include="ContratosMigrations\201907291946550_Correcciones.Designer.cs">
+      <DependentUpon>201907291946550_Correcciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContratosMigrations\Configuration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContratosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -259,45 +259,17 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModifiedContratosController.cs" />
     <Compile Include="Controllers\PDFContratosController.cs" />
-    <Compile Include="DataContextMigrations\201907262340281_Initial.cs" />
-    <Compile Include="DataContextMigrations\201907262340281_Initial.Designer.cs">
-      <DependentUpon>201907262340281_Initial.cs</DependentUpon>
+    <Compile Include="DatosMigrations\201907292055425_Correcciones.cs" />
+    <Compile Include="DatosMigrations\201907292055425_Correcciones.Designer.cs">
+      <DependentUpon>201907292055425_Correcciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataContextMigrations\201907262345508_Initial1.cs" />
-    <Compile Include="DataContextMigrations\201907262345508_Initial1.Designer.cs">
-      <DependentUpon>201907262345508_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataContextMigrations\Configuration.cs" />
+    <Compile Include="DatosMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810262245131_modifieddatimeanull.cs" />
-    <Compile Include="Migrations\201810262245131_modifieddatimeanull.Designer.cs">
-      <DependentUpon>201810262245131_modifieddatimeanull.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810262330473_logoutbyinactivity.cs" />
-    <Compile Include="Migrations\201810262330473_logoutbyinactivity.Designer.cs">
-      <DependentUpon>201810262330473_logoutbyinactivity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905241733340_Dato finalizado.cs" />
-    <Compile Include="Migrations\201905241733340_Dato finalizado.Designer.cs">
-      <DependentUpon>201905241733340_Dato finalizado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905241810357_Contratos campo requerido.cs" />
-    <Compile Include="Migrations\201905241810357_Contratos campo requerido.Designer.cs">
-      <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905242044377_Cambios.cs" />
-    <Compile Include="Migrations\201905242044377_Cambios.Designer.cs">
-      <DependentUpon>201905242044377_Cambios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905312146489_fecha.cs" />
-    <Compile Include="Migrations\201905312146489_fecha.Designer.cs">
-      <DependentUpon>201905312146489_fecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907262227491_Cambios demo.cs" />
-    <Compile Include="Migrations\201907262227491_Cambios demo.Designer.cs">
-      <DependentUpon>201907262227491_Cambios demo.cs</DependentUpon>
+    <Compile Include="Migrations\201907291926466_Correcciones.cs" />
+    <Compile Include="Migrations\201907291926466_Correcciones.Designer.cs">
+      <DependentUpon>201907291926466_Correcciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -478,35 +450,14 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ApplicationContextMigrations\201907262346582_Initial.resx">
-      <DependentUpon>201907262346582_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="ContratosMigrations\201907291946550_Correcciones.resx">
+      <DependentUpon>201907291946550_Correcciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContextMigrations\201907262340281_Initial.resx">
-      <DependentUpon>201907262340281_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="DatosMigrations\201907292055425_Correcciones.resx">
+      <DependentUpon>201907292055425_Correcciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataContextMigrations\201907262345508_Initial1.resx">
-      <DependentUpon>201907262345508_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810262245131_modifieddatimeanull.resx">
-      <DependentUpon>201810262245131_modifieddatimeanull.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810262330473_logoutbyinactivity.resx">
-      <DependentUpon>201810262330473_logoutbyinactivity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905241733340_Dato finalizado.resx">
-      <DependentUpon>201905241733340_Dato finalizado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905241810357_Contratos campo requerido.resx">
-      <DependentUpon>201905241810357_Contratos campo requerido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905242044377_Cambios.resx">
-      <DependentUpon>201905242044377_Cambios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905312146489_fecha.resx">
-      <DependentUpon>201905312146489_fecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907262227491_Cambios demo.resx">
-      <DependentUpon>201907262227491_Cambios demo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907291926466_Correcciones.resx">
+      <DependentUpon>201907291926466_Correcciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

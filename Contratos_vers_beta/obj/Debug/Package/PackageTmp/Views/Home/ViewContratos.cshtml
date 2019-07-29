@@ -56,12 +56,14 @@
             <tr style="font-size:14px">
                 <th>Clave del Contrato</th>
                 <th>Fecha</th>
+                <th style="width:210px !important;">Contrato o convenio</th>
+                <th style="width:210px !important;">Tipo contrato o convenio</th>
                 <th style="width:210px !important;">Empresa 1</th>
                 <th style="width:220px !important;">Apoderado 1</th>
                 <th>Firma Apoderado 1</th>
                 <th>Empresa 2</th>
                 <th style="width:220px !important;">Apoderado 2</th>
-                <th >Firma Apoderado 2</th>
+                <th>Firma Apoderado 2</th>
                 <th>Empresa 3</th>
                 <th style="width:220px !important;">Apoderado 3</th>
                 <th>Firma Apoderado 3</th>
@@ -80,29 +82,31 @@
         <tbody>
             @foreach (var c in Model)
             {
-                <tr style="font-size:12px !important;">
-                    <td style="vertical-align:middle">@($"RHDEMO00{c.Id}")</td>
-                    <td style="vertical-align:middle">@(c.FECHA.HasValue ? c.FECHA.Value.ToShortDateString() : "NO INDICA")</td>
-                    <td style="vertical-align:middle">@c.EMPRESA</td>
-                    <td style="vertical-align:middle">@c.APODERADO</td>
-                    <td style="vertical-align:middle">@(c.FIRMADO ? "SI" : "NO")</td>
-                    <td style="vertical-align:middle">@c.EMPRESA_1</td>
-                    <td style="vertical-align:middle">@c.APODERADO_1</td>
-                    <td style="vertical-align:middle">@(c.FIRMADO_1 ? "SI" : "NO")</td>
-                    <td style="vertical-align:middle">@(c.EMPRESA_2.IsEmpty() ? "NO INDICA" : c.EMPRESA_2)</td>
-                    <td style="vertical-align:middle">@(c.APODERADO_2.IsEmpty() ? "NO INDICA" : c.APODERADO_2)</td>
-                    <td style="vertical-align:middle">@((c.APODERADO_2.IsEmpty() && c.EMPRESA_2.IsEmpty()) ? "NO INDICA" : (c.FIRMADO_2 ? "SI" : "NO"))</td>
-                    <td style="vertical-align:middle">@c.CONTRAPRESTACION_IVA_INCLUIDO</td>
-                    <td style="vertical-align:middle">@c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO</td>
-                    <td style="vertical-align:middle">@(c.ORIGINAL_O_COPIA ? "COPIA" : "ORIGINAL")</td>
-                    <td style="vertical-align:middle">@c.ANIO_DE_FIRMA</td>
-                    <td style="vertical-align:middle">@(c.OBSERVACIONES.IsEmpty() ? "NO INDICA" : c.OBSERVACIONES)</td>
-                    <td style="vertical-align:middle">@(c.FINALIZADO ? "SI" : "NO")</td>
-                    <td style="vertical-align:middle">@Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" })</td>
-                    <td style="vertical-align:middle">@Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" })</td>
-                    <td style="vertical-align:middle">@Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-success btn-text-white" })</td>
-                    <td style="vertical-align:middle">@Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank" })</td>
-                </tr>
+            <tr style="font-size:12px !important;">
+                <td style="vertical-align:middle">@($"RHDEMO00{c.Id}")</td>
+                <td style="vertical-align:middle">@(c.FECHA.HasValue ? c.FECHA.Value.ToShortDateString() : "NO INDICA")</td>
+                <td style="vertical-align:middle">@(c.Contrato_Convenio ? "CONTRATO" : "CONVENIO")</td>
+                <td style="vertical-align:middle">@c.Tipo_Contrato_Convenio</td>
+                <td style="vertical-align:middle">@c.EMPRESA</td>
+                <td style="vertical-align:middle">@c.APODERADO</td>
+                <td style="vertical-align:middle">@(c.FIRMADO ? "SI" : "NO")</td>
+                <td style="vertical-align:middle">@c.EMPRESA_1</td>
+                <td style="vertical-align:middle">@c.APODERADO_1</td>
+                <td style="vertical-align:middle">@(c.FIRMADO_1 ? "SI" : "NO")</td>
+                <td style="vertical-align:middle">@(c.EMPRESA_2.IsEmpty() ? "NO INDICA" : c.EMPRESA_2)</td>
+                <td style="vertical-align:middle">@(c.APODERADO_2.IsEmpty() ? "NO INDICA" : c.APODERADO_2)</td>
+                <td style="vertical-align:middle">@((c.APODERADO_2.IsEmpty() && c.EMPRESA_2.IsEmpty()) ? "NO INDICA" : (c.FIRMADO_2 ? "SI" : "NO"))</td>
+                <td style="vertical-align:middle">@c.CONTRAPRESTACION_IVA_INCLUIDO</td>
+                <td style="vertical-align:middle">@c.VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO</td>
+                <td style="vertical-align:middle">@(c.ORIGINAL_O_COPIA ? "COPIA" : "ORIGINAL")</td>
+                <td style="vertical-align:middle">@c.ANIO_DE_FIRMA</td>
+                <td style="vertical-align:middle">@(c.OBSERVACIONES.IsEmpty() ? "NO INDICA" : c.OBSERVACIONES)</td>
+                <td style="vertical-align:middle">@(c.FINALIZADO ? "SI" : "NO")</td>
+                <td style="vertical-align:middle">@Html.ActionLink("Editar", "Edit", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-warning btn-text-white" })</td>
+                <td style="vertical-align:middle">@Html.ActionLink("Eliminar", "Delete", "Contratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-danger btn-text-white" })</td>
+                <td style="vertical-align:middle">@Html.ActionLink("Cargar PDF", "ImportPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-success btn-text-white" })</td>
+                <td style="vertical-align:middle">@Html.ActionLink("Ver PDF", "DisplayPDFContratos", routeValues: new { Id = c.Id }, htmlAttributes: new { @class = "btn btn-info btn-text-white", target = "_blank" })</td>
+            </tr>
             }
         </tbody>
     </table>

@@ -76,6 +76,8 @@
                     <tr>
                         <th>@Html.DisplayNameFor(model => model[0].CLAVE_DEL_CONTRATO)</th>
                         <th>@Html.DisplayNameFor(model => model[0].FECHA)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Contrato_Convenio)</th>
+                        <th>@Html.DisplayNameFor(model => model[0].Contrato_Convenio)</th>
                         <th>@Html.DisplayNameFor(model => model[0].EMPRESA)</th>
                         <th>@Html.DisplayNameFor(model => model[0].APODERADO)</th>
                         <th>@Html.DisplayNameFor(model => model[0].FIRMADO)</th>
@@ -95,72 +97,80 @@
                 <tbody>
                     @for (int i = 0; i < Model.Count; i++)
                     {
-                        <tr>
-                            <td>
-                                @Html.HiddenFor(x => x[i].CLAVE_DEL_CONTRATO)
-                                @Html.DisplayFor(x => x[i].CLAVE_DEL_CONTRATO)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].FECHA)
-                                @Html.DisplayFor(x => x[i].FECHA)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].EMPRESA)
-                                @Html.DisplayFor(x => x[i].EMPRESA)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].APODERADO)
-                                @Html.DisplayFor(x => x[i].APODERADO)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].FIRMADO)
-                                @Html.DisplayFor(x => x[i].FIRMADO)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].EMPRESA_1)
-                                @Html.DisplayFor(x => x[i].EMPRESA_1)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].APODERADO_1)
-                                @Html.DisplayFor(x => x[i].APODERADO_1)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].FIRMADO_1)
-                                @Html.DisplayFor(x => x[i].FIRMADO_1)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].EMPRESA_2)
-                                @Html.DisplayFor(x => x[i].EMPRESA_2)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].APODERADO_2)
-                                @Html.DisplayFor(x => x[i].APODERADO_2)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].FIRMADO_2)
-                                @Html.DisplayFor(x => x[i].FIRMADO_2)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].CONTRAPRESTACION_IVA_INCLUIDO)
-                                @Html.DisplayFor(x => x[i].CONTRAPRESTACION_IVA_INCLUIDO)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
-                                @Html.DisplayFor(x => x[i].VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].ORIGINAL_O_COPIA)
-                                @Html.DisplayFor(x => x[i].ORIGINAL_O_COPIA)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].OBSERVACIONES)
-                                @Html.DisplayFor(x => x[i].OBSERVACIONES)
-                            </td>
-                            <td>
-                                @Html.HiddenFor(x => x[i].ANIO_DE_FIRMA)
-                                @Html.DisplayFor(x => x[i].ANIO_DE_FIRMA)
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(x => x[i].CLAVE_DEL_CONTRATO)
+                            @Html.DisplayFor(x => x[i].CLAVE_DEL_CONTRATO)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].FECHA)
+                            @Html.DisplayFor(x => x[i].FECHA)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].Contrato_Convenio)
+                            @Html.DisplayFor(x => x[i].Contrato_Convenio)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].Tipo_Contrato_Convenio)
+                            @Html.DisplayFor(x => x[i].Tipo_Contrato_Convenio)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].EMPRESA)
+                            @Html.DisplayFor(x => x[i].EMPRESA)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].APODERADO)
+                            @Html.DisplayFor(x => x[i].APODERADO)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].FIRMADO)
+                            @Html.DisplayFor(x => x[i].FIRMADO)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].EMPRESA_1)
+                            @Html.DisplayFor(x => x[i].EMPRESA_1)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].APODERADO_1)
+                            @Html.DisplayFor(x => x[i].APODERADO_1)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].FIRMADO_1)
+                            @Html.DisplayFor(x => x[i].FIRMADO_1)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].EMPRESA_2)
+                            @Html.DisplayFor(x => x[i].EMPRESA_2)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].APODERADO_2)
+                            @Html.DisplayFor(x => x[i].APODERADO_2)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].FIRMADO_2)
+                            @Html.DisplayFor(x => x[i].FIRMADO_2)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].CONTRAPRESTACION_IVA_INCLUIDO)
+                            @Html.DisplayFor(x => x[i].CONTRAPRESTACION_IVA_INCLUIDO)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
+                            @Html.DisplayFor(x => x[i].VIGENCIA_TAL_CUAL_ESTIPULA_EL_CONTRATO)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].ORIGINAL_O_COPIA)
+                            @Html.DisplayFor(x => x[i].ORIGINAL_O_COPIA)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].OBSERVACIONES)
+                            @Html.DisplayFor(x => x[i].OBSERVACIONES)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(x => x[i].ANIO_DE_FIRMA)
+                            @Html.DisplayFor(x => x[i].ANIO_DE_FIRMA)
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>
